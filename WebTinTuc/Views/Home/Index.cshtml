@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WebTinTuc.Models.Entities.News>
+
+@{
+    ViewData["Title"] = "Home - Vietnam codeCore";
+}
+
+<div class="container mt-4">
+    <!-- Hero Section -->
+    <div class="row">
+        @if (Model.Any())
+        {
+            var mainNews = Model.First();
+            <!-- Lấy bài viết đầu tiên -->
+
+            <div class="col-lg-8">
+                <div class="bg-light p-4 rounded">
+                    <h2 class="text-danger text-uppercase">Trending</h2>
+                    <h1 class="fw-bold">@mainNews.Title</h1>
+                    <p class="text-muted">@mainNews.Abstract</p>
+                    <p class="text-secondary">
+                        @mainNews.PostedDate.ToString("dd/MM/yyyy") · @mainNews.ViewCount lượt xem
+                    </p>
+                </div>
+            </div>
+        }
+
+        <!-- Breaking News -->
+        <div class="col-lg-4">
+            <div class="bg-danger text-white p-3 rounded">
+                <h2 class="fs-5 fw-bold">Breaking News</h2>
+                <p class="mt-2 fw-semibold">
+                    Kanye West says he's running for president in 2020.
+                </p>
+            </div>
+        </div>
+    </div>`
+
+    <!-- News Categories -->
+    <div class="mt-4">
+        <h2 class="fw-bold">Latest Stories</h2>
+        <div class="row">
+            @foreach (var news in Model.Skip(1))
+            {
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <img src="@news.FullImagePath" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="text-dark text-decoration-none">
+                                    @news.Title
+                                </a>
+                            </h5>
+                            <p class="card-text text-muted">
+                                @news.PostedDate.ToString("dd/MM/yyyy") · @news.ViewCount lượt xem
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- More Button -->
+    <div class="text-center mt-4">
+        <a href="#" class="btn btn-dark">View More</a>
+    </div>
+
+    <!-- Editor's Picks -->
+    <div class="mt-5">
+        <h2 class="fw-bold">Editor's Picks</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="bg-light p-3 rounded">
+                    <h5 class="fw-bold">Serological surveys are being conducted to test for coronavirus antibodies.</h5>
+                    <p class="text-muted">The authorities are hoping to find that a substantial proportion of the population...</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bg-light p-3 rounded">
+                    <h5 class="fw-bold">Making a mark in Asia: East Bengal's 2003 ASEAN Cup win</h5>
+                    <p class="text-muted">Beating some of the finest teams from South Asia...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebNC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebNC.styles.css" asp-append-version="true" />
+    <style>
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebNC</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <!-- Trang chủ -->
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary border-0 py-2" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                        </li>
+
+                        <!-- Dropdown Tin tức -->
+                        <li class="nav-item dropdown">
+                            <a class="btn btn-outline-primary border-0 py-2" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                                <li><a class="dropdown-item" asp-controller="News" asp-action="Latest">Mới nhất</a></li>
+                                <li><a class="dropdown-item" asp-controller="News" asp-action="Popular">Phổ biến</a></li>
+                                <li><a class="dropdown-item" asp-controller="News" asp-action="Categories">Danh mục</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Hỗ trợ -->
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary border-0 py-2" asp-area="" asp-controller="Support" asp-action="Index">Hỗ trợ</a>
+                        </li>
+                    </ul>
+
+                    <!-- Kiểm tra đăng nhập -->
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <!-- Chưa đăng nhập: Hiển thị nút Đăng nhập và Đăng ký -->
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary border-0 py-2" asp-area="" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary border-0 py-2" asp-area="" asp-controller="Account" asp-action="Register">Đăng ký</a>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <!-- Đã đăng nhập: Hiển thị avatar và dropdown -->
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="@User.Claims.FirstOrDefault(c => c.Type == "Avatar")?.Value" alt="Avatar" class="avatar" />
+                                    <span class="ms-2">@User.Identity.Name</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Quản lý tài khoản</a></li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li><a class="dropdown-item" asp-controller="Account" asp-action="AdminDashboard">Quản trị</a></li>
+                                    }
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Đăng xuất</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+
+                    <!-- Thanh tìm kiếm -->
+                    <form class="d-flex ms-3" asp-controller="Search" asp-action="Results" method="get">
+                        <input class="form-control me-2" type="search" name="query" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Tìm</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - WebNC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
