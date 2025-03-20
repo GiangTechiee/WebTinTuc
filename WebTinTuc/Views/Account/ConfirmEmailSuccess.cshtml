@@ -1,0 +1,11 @@
+﻿@model string 
+
+@{
+    ViewData["Title"] = "Xác nhận email thành công";
+}
+
+<div class="container">
+    <h2>Xác nhận email thành công!</h2>
+    <p>@Model</p>
+    <p>Bạn có thể <a href="@Url.Action("Login", "Account")">đăng nhập ngay bây giờ</a>.</p>
+</div>

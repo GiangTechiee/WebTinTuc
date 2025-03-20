@@ -100,7 +100,7 @@ namespace WebTinTuc.Controllers
             try
             {
                 await _userService.ConfirmEmail(token);
-                return Ok(new { message = "Email đã được xác nhận thành công! Bạn có thể đăng nhập ngay bây giờ." });
+                return View("ConfirmEmailSuccess", "Email đã được xác nhận thành công! Bạn có thể đăng nhập ngay bây giờ.");
             }
             catch (Exception ex)
             {
