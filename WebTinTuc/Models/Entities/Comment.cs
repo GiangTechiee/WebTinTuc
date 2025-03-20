@@ -11,7 +11,7 @@ namespace WebTinTuc.Models.Entities
         [Required, MaxLength(1000)]
         public string Content { get; set; }
 
-        public DateTime CreateAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         public bool IsApprove { get; set; }
 

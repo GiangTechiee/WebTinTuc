@@ -28,7 +28,7 @@ namespace WebTinTuc.Services
                 DateOfBirth = userDto.DateOfBirth,
                 Fk_RoleId = 1,
                 CreatedAt = DateTime.Now,
-                Avatar = "/images/default-avatar.jpg",
+                Avatar = "default-avatar.jpg",
                 IsEmailConfirmed = false,
                 EmailConfirmationToken = Guid.NewGuid().ToString(), // Tạo token ngẫu nhiên
                 TokenExpiration = DateTime.Now.AddHours(24) // Token hết hạn sau 24 giờ

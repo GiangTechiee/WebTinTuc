@@ -23,6 +23,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<INewsRepository, NewsRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Lấy Connection String từ appsettings.json

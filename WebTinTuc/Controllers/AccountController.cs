@@ -69,7 +69,7 @@ namespace WebTinTuc.Controllers
                     new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
                     new Claim(ClaimTypes.Name, user.FullName),
                     new Claim(ClaimTypes.Role, roleName),
-                    new Claim("Avatar", user.Avatar ?? "/images/default-avatar.jpg")
+                    new Claim("Avatar", user.FullAvatarPath)
                 };
 
                 // Tạo identity và principal
@@ -84,7 +84,7 @@ namespace WebTinTuc.Controllers
                     UserId = user.UserId,
                     FullName = user.FullName,
                     Role = userDto.Role, // Trả về RoleName
-                    Avatar = user.Avatar,
+                    Avatar = user.FullAvatarPath,
                     Message = "Đăng nhập thành công!"
                 });
             }

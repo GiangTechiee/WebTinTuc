@@ -20,6 +20,7 @@ namespace WebTinTuc.Models.Entities
         public string PhoneNumber { get; set; }
 
         public string Avatar { get; set; }
+        public string FullAvatarPath => $"/images/{Avatar ?? "default-avatar.jpg"}";
 
         [Required(ErrorMessage = "Email là bắt buộc")]
         [MaxLength(255, ErrorMessage = "Email không được vượt quá 255 ký tự")]

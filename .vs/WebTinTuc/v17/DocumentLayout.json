@@ -3,20 +3,60 @@
   "WorkspaceRootPath": "D:\\BTL_WebNC\\WebTinTuc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\dtos\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\dtos\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\news\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\news\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\entities\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\entities\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\newsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\newsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\inewsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\inewsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +74,185 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserRegisterDto.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\UserRegisterDto.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Models\\DTOs\\UserRegisterDto.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\UserRegisterDto.cs",
-              "RelativeToolTip": "WebTinTuc\\Models\\DTOs\\UserRegisterDto.cs",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\News\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebTinTuc\\Views\\News\\Details.cshtml",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\News\\Details.cshtml",
+              "RelativeToolTip": "WebTinTuc\\Views\\News\\Details.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAkwDQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T13:39:54.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "News.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\News.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Models\\Entities\\News.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\News.cs",
+              "RelativeToolTip": "WebTinTuc\\Models\\Entities\\News.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T07:56:28.456Z",
+              "WhenOpened": "2025-03-19T14:30:08.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\CommentController.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "WebTinTuc\\Controllers\\CommentController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T14:28:07.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CommentRepository.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\CommentRepository.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Repositories\\CommentRepository.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\CommentRepository.cs",
+              "RelativeToolTip": "WebTinTuc\\Repositories\\CommentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T14:25:32.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NewsRepository.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\NewsRepository.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Repositories\\NewsRepository.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\NewsRepository.cs",
+              "RelativeToolTip": "WebTinTuc\\Repositories\\NewsRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:46:02.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewsController.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\NewsController.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\NewsController.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\NewsController.cs",
+              "RelativeToolTip": "WebTinTuc\\Controllers\\NewsController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAmwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:43:06.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Models\\Entities\\User.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\User.cs",
-              "RelativeToolTip": "WebTinTuc\\Models\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T07:56:25.474Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T14:32:37.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "WebTinTuc\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T07:31:42.705Z",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebTinTuc\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:59:21.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Account\\Register.cshtml",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "WebTinTuc\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAD8AAAAPAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Program.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Program.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Program.cs",
+              "RelativeToolTip": "WebTinTuc\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T14:29:36.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebTinTuc\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebTinTuc\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-19T15:15:08.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ICommentRepository.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\ICommentRepository.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Repositories\\ICommentRepository.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\ICommentRepository.cs",
+              "RelativeToolTip": "WebTinTuc\\Repositories\\ICommentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T14:24:52.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "INewsRepository.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\INewsRepository.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Repositories\\INewsRepository.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\INewsRepository.cs",
+              "RelativeToolTip": "WebTinTuc\\Repositories\\INewsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:43:30.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\Comment.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Models\\Entities\\Comment.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\Comment.cs",
+              "RelativeToolTip": "WebTinTuc\\Models\\Entities\\Comment.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:40:38.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebTinTuc\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwDoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T07:31:18.412Z"
+              "WhenOpened": "2025-03-19T14:04:13.964Z",
+              "EditorCaption": ""
             }
           ]
         }

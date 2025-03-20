@@ -13,18 +13,16 @@ namespace WebTinTuc.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<News>> GetAllAsync()
+        public async Task<IEnumerable<News>> GetAll()
         {
-            return await _context.News
-                .Include(n => n.Comments)
-                .Include(n => n.Categories)
-                .ToListAsync();
+            return await _context.News.ToListAsync();
         }
 
-        public async Task<News?> GetByIdAsync(int id)
+        public async Task<News?> GetById(int id)
         {
             return await _context.News
                 .Include(n => n.Comments)
+                    .ThenInclude(c => c.User)
                 .Include(n => n.Categories)
                 .FirstOrDefaultAsync(n => n.NewId == id);
         }

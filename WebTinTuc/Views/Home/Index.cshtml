@@ -15,7 +15,11 @@
             <div class="col-lg-8">
                 <div class="bg-light p-4 rounded">
                     <h2 class="text-danger text-uppercase">Trending</h2>
-                    <h1 class="fw-bold">@mainNews.Title</h1>
+                    <h1 class="fw-bold">
+                        <a href="@Url.Action("Details", "News", new { id = mainNews.NewId })" class="text-dark text-decoration-none">
+                            @mainNews.Title
+                        </a>
+                    </h1>
                     <p class="text-muted">@mainNews.Abstract</p>
                     <p class="text-secondary">
                         @mainNews.PostedDate.ToString("dd/MM/yyyy") · @mainNews.ViewCount lượt xem
@@ -43,13 +47,16 @@
             {
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card h-100">
-                        <img src="@news.FullImagePath" class="card-img-top" alt="News Image">
+                        <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="text-decoration-none">
+                            <img src="@news.FullImagePath" class="card-img-top" alt="News Image">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="text-dark text-decoration-none">
                                     @news.Title
                                 </a>
                             </h5>
+                            <p class="text-muted">@news.Abstract</p>
                             <p class="card-text text-muted">
                                 @news.PostedDate.ToString("dd/MM/yyyy") · @news.ViewCount lượt xem
                             </p>
