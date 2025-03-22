@@ -46,6 +46,14 @@
                             </ul>
                         </li>
 
+                        <!-- Thêm bài viết (hiển thị khi đã đăng nhập) -->
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary border-0 py-2" asp-controller="News" asp-action="Create">Thêm bài viết</a>
+                            </li>
+                        }
+
                         <!-- Hỗ trợ -->
                         <li class="nav-item">
                             <a class="btn btn-outline-primary border-0 py-2" asp-area="" asp-controller="Support" asp-action="Index">Hỗ trợ</a>

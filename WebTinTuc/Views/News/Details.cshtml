@@ -109,21 +109,21 @@
     <script>
         // Hàm để lưu tin tức đã xem vào Local Storage
         function saveRecentNews(news) {
-            let recentNews = JSON.parse(localStorage.getItem('recentNews')) || [];
+            let recentNews = JSON.parse(sessionStorage.getItem('recentNews')) || [];
             const existingIndex = recentNews.findIndex(item => item.NewId === news.NewId);
             if (existingIndex !== -1) {
                 recentNews.splice(existingIndex, 1);
             }
             recentNews.unshift(news);
-            if (recentNews.length > 5) {
+            if (recentNews.length > 6) {
                 recentNews.pop();
             }
-            localStorage.setItem('recentNews', JSON.stringify(recentNews));
+            sessionStorage.setItem('recentNews', JSON.stringify(recentNews));
         }
 
         // Hàm để hiển thị danh sách tin đã xem
         function displayRecentNews(currentNewId) {
-            const recentNews = JSON.parse(localStorage.getItem('recentNews')) || [];
+            const recentNews = JSON.parse(sessionStorage.getItem('recentNews')) || [];
             const recentNewsContainer = document.getElementById('recentNews');
 
             // Xóa nội dung cũ
