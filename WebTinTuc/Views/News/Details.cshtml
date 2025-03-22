@@ -6,6 +6,13 @@
     var currentUserId = User.Identity.IsAuthenticated ? int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value) : (int?)null;
 }
 
+
+<style>
+    .opacity-50 {
+        opacity: 0.5; /* Làm mờ bình luận chưa duyệt */
+    }
+</style>
+
 <div class="container mt-4">
     <div class="row">
         <!-- Cột lớn bên trái: Thông tin bài viết -->
@@ -89,10 +96,78 @@
     <div class="text-center mt-4">
         <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary">Quay lại trang chủ</a>
     </div>
+
+    <!-- tin đã xem gần đây-->
+    <div class="mt-5">
+        <h4>Tin tức đã xem gần đây</h4>
+        <div id="recentNews" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3"></div>
+    </div>
 </div>
 
-<style>
-    .opacity-50 {
-        opacity: 0.5; /* Làm mờ bình luận chưa duyệt */
-    }
-</style>
+
+@section Scripts {
+    <script>
+        // Hàm để lưu tin tức đã xem vào Local Storage
+        function saveRecentNews(news) {
+            let recentNews = JSON.parse(localStorage.getItem('recentNews')) || [];
+            const existingIndex = recentNews.findIndex(item => item.NewId === news.NewId);
+            if (existingIndex !== -1) {
+                recentNews.splice(existingIndex, 1);
+            }
+            recentNews.unshift(news);
+            if (recentNews.length > 5) {
+                recentNews.pop();
+            }
+            localStorage.setItem('recentNews', JSON.stringify(recentNews));
+        }
+
+        // Hàm để hiển thị danh sách tin đã xem
+        function displayRecentNews(currentNewId) {
+            const recentNews = JSON.parse(localStorage.getItem('recentNews')) || [];
+            const recentNewsContainer = document.getElementById('recentNews');
+
+            // Xóa nội dung cũ
+            recentNewsContainer.innerHTML = '';
+
+            // Nếu không có tin nào ngoài tin hiện tại
+            if (recentNews.length === 0 || (recentNews.length === 1 && recentNews[0].NewId === currentNewId)) {
+                recentNewsContainer.innerHTML = '<p class="text-muted col-12">Chưa có tin tức nào được xem gần đây.</p>';
+                return;
+            }
+
+            // Hiển thị các tin đã xem (trừ tin hiện tại)
+            recentNews
+                .filter(news => news.NewId !== currentNewId) // Loại bỏ tin hiện tại
+                .forEach(news => {
+                    const newsCard = `
+                        <div class="col">
+                            <div class="card h-100">
+                                <a href="/News/Detail/${news.NewId}">
+                                    <img src="${news.FullImagePath}" class="card-img-top" alt="${news.Title}" style="height: 100px; object-fit: cover;">
+                                </a>
+                                <div class="card-body p-2">
+                                    <h6 class="card-title mb-0 style="font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                        <a href="/News/Detail/${news.NewId}" class="text-decoration-none">${news.Title}</a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    recentNewsContainer.innerHTML += newsCard;
+                });
+        }
+
+        // Tin tức hiện tại từ Model
+        const currentNews = {
+            NewId: @Model.NewId,
+            Title: "@Model.Title",
+            FullImagePath: "@Model.FullImagePath"
+        };
+
+        // Lưu tin hiện tại vào Local Storage
+        saveRecentNews(currentNews);
+
+        // Hiển thị danh sách tin đã xem
+        displayRecentNews(@Model.NewId);
+    </script>
+}

@@ -16,7 +16,7 @@ namespace WebTinTuc.Models.DTOs
         public string Password { get; set; }
 
         [Required, MaxLength(12)]
-        [RegularExpression(@"^(?:\+84|0)(?:3[2-9]|5[6|8|9]|7[0|6-9]|8[1-5|8|9]|9[0-4|6-9])[0-9]{7}$",
+        [RegularExpression(@"^(?:\+84|0)(?:3[2-9]|5[6|8|9]|7[0|6-9]|8[1-6|8|9]|9[0-4|6-9])[0-9]{7}$",
         ErrorMessage = "Số điện thoại phải là số Việt Nam.")]
         public string PhoneNumber { get; set; }
 

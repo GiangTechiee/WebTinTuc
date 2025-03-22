@@ -42,10 +42,36 @@ namespace WebTinTuc.Repositories
                 throw new Exception("Email hoặc số điện thoại không tồn tại");
             }
 
+            // Kiểm tra nếu tài khoản bị khóa
+            if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTime.Now)
+            {
+                var remainingTime = (user.LockoutEnd.Value - DateTime.Now).TotalMinutes;
+                throw new Exception($"Tài khoản của bạn đã bị khóa. Vui lòng thử lại sau {Math.Ceiling(remainingTime)} phút.");
+            }
+
             // check MK
             if (!BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
             {
+                user.FailedLoginAttempts += 1;
+
+                if (user.FailedLoginAttempts >= 5)
+                {
+                    user.LockoutEnd = DateTime.Now.AddMinutes(30); // Khóa trong 30 phút
+                    user.FailedLoginAttempts = 0; // Reset lại số lần thử sau khi khóa
+                    await _context.SaveChangesAsync();
+                    throw new Exception("Bạn đã nhập sai mật khẩu quá 5 lần. Tài khoản của bạn bị khóa trong 30 phút.");
+                }
+
+                await _context.SaveChangesAsync();
                 throw new Exception("Tài khoản hoặc mật khẩu không đúng");
+            }
+
+            // Đăng nhập thành công, reset số lần thử sai
+            if (user.FailedLoginAttempts > 0)
+            {
+                user.FailedLoginAttempts = 0;
+                user.LockoutEnd = null; // Xóa trạng thái khóa nếu có
+                await _context.SaveChangesAsync();
             }
 
             return user;
