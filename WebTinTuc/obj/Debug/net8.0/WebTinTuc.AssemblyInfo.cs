@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebTinTuc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2c02107926217d6dd03258cdf72069f85ace5df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6eae8410c1e0301ed0127618ea1d738a5f11414")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebTinTuc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebTinTuc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

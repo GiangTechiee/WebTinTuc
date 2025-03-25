@@ -1,0 +1,156 @@
+﻿@model IEnumerable<WebTinTuc.Models.Entities.News>
+
+@{
+    ViewData["Title"] = "Bài viết của tôi";
+}
+
+<div class="container py-4">
+    <h1 class="mb-4 text-center">Bài viết của tôi</h1>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center" role="alert">
+            Bạn chưa có bài viết nào.
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var news in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        @if (!string.IsNullOrEmpty(news.Image))
+                        {
+                            <img src="@news.FullImagePath" class="card-img-top" alt="@news.Title" style="object-fit: cover; height: 200px;">
+                        }
+                        else
+                        {
+                            <img src="/images/default-news.jpg" class="card-img-top" alt="No image" style="object-fit: cover; height: 200px;">
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="text-dark text-decoration-none">
+                                    @news.Title
+                                </a>
+                            </h5>
+                            <p class="card-text text-muted">@news.Abstract</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    Ngày đăng: @news.PostedDate.ToString("dd/MM/yyyy") · @news.ViewCount lượt xem
+                                </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge @(news.IsApprove ? "bg-success" : "bg-warning")">
+                                    @(news.IsApprove ? "Đã duyệt" : "Chưa duyệt")
+                                </span>
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex justify-content-between">
+                                <a href="@Url.Action("Edit", "News", new { id = news.NewId })" class="btn btn-primary btn-sm">
+                                    Chỉnh sửa
+                                </a>
+                                <button class="btn btn-danger btn-sm btn-delete" data-id="@news.NewId" data-title="@news.Title">
+                                    Xóa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<!-- Modal xác nhận xóa -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Xác nhận xóa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc muốn xóa bài viết "<span id="deleteTitle"></span>" không?
+                @Html.AntiForgeryToken() <!-- Thêm token vào modal -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelDelete">Hủy</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    
+    <script>
+        let currentModal = null;
+
+        document.querySelectorAll('.btn-delete').forEach(button => {
+            button.addEventListener('click', function () {
+                const newsId = this.getAttribute('data-id');
+                const newsTitle = this.getAttribute('data-title');
+
+                document.getElementById('deleteTitle').textContent = newsTitle;
+
+                // Hiển thị modal
+                currentModal = new bootstrap.Modal(document.getElementById('deleteModal'), {
+                    backdrop: 'static',
+                    keyboard: false
+                });
+                currentModal.show();
+
+                // Xử lý nút Xóa
+                const confirmDelete = document.getElementById('confirmDelete');
+                confirmDelete.onclick = async function () {
+                    const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
+                    if (!tokenInput) {
+                        console.error('Không tìm thấy RequestVerificationToken');
+                        alert('Lỗi: Không tìm thấy token xác thực. Vui lòng tải lại trang.');
+                        currentModal.hide();
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch('@Url.Action("Delete", "News")/' + newsId, {
+                            method: 'POST',
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'RequestVerificationToken': tokenInput.value
+                            }
+                        });
+
+                        if (response.ok) {
+                            currentModal.hide();
+                            window.location.reload();
+                        } else {
+                            console.error('Lỗi server:', response.status, response.statusText);
+                            alert('Đã xảy ra lỗi khi xóa bài viết: ' + response.statusText);
+                        }
+                    } catch (error) {
+                        console.error('Lỗi fetch:', error);
+                        alert('Lỗi kết nối: ' + error.message);
+                    }
+                };
+            });
+        });
+
+        // Xử lý khi modal ẩn
+        const deleteModal = document.getElementById('deleteModal');
+        deleteModal.addEventListener('hidden.bs.modal', function () {
+            if (document.activeElement) {
+                document.activeElement.blur();
+            }
+            currentModal = null;
+        });
+
+        // Xử lý nút Hủy
+        document.getElementById('cancelDelete').addEventListener('click', function () {
+            if (currentModal) {
+                currentModal.hide();
+            }
+        });
+    </script>
+}

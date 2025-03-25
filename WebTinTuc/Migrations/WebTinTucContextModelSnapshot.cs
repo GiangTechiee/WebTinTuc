@@ -133,6 +133,9 @@ namespace WebTinTuc.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Fk_UserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -151,6 +154,8 @@ namespace WebTinTuc.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("NewId");
+
+                    b.HasIndex("Fk_UserId");
 
                     b.ToTable("News");
                 });
@@ -298,6 +303,17 @@ namespace WebTinTuc.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("WebTinTuc.Models.Entities.News", b =>
+                {
+                    b.HasOne("WebTinTuc.Models.Entities.User", "User")
+                        .WithMany("News")
+                        .HasForeignKey("Fk_UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("WebTinTuc.Models.Entities.User", b =>
                 {
                     b.HasOne("WebTinTuc.Models.Entities.Role", "Role")
@@ -331,6 +347,8 @@ namespace WebTinTuc.Migrations
                     b.Navigation("Comments");
 
                     b.Navigation("Favorites");
+
+                    b.Navigation("News");
                 });
 #pragma warning restore 612, 618
         }

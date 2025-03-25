@@ -26,25 +26,6 @@ namespace WebTinTuc.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "News",
-                columns: table => new
-                {
-                    NewId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Abstract = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PostedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ViewCount = table.Column<int>(type: "int", nullable: false),
-                    IsApprove = table.Column<bool>(type: "bit", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_News", x => x.NewId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -55,30 +36,6 @@ namespace WebTinTuc.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.RoleId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "NewsCategory",
-                columns: table => new
-                {
-                    CategoriesCategoryId = table.Column<int>(type: "int", nullable: false),
-                    NewsNewId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_NewsCategory", x => new { x.CategoriesCategoryId, x.NewsNewId });
-                    table.ForeignKey(
-                        name: "FK_NewsCategory_Categories_CategoriesCategoryId",
-                        column: x => x.CategoriesCategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "CategoryId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_NewsCategory_News_NewsNewId",
-                        column: x => x.NewsNewId,
-                        principalTable: "News",
-                        principalColumn: "NewId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -98,7 +55,9 @@ namespace WebTinTuc.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsEmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     EmailConfirmationToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TokenExpiration = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    TokenExpiration = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    FailedLoginAttempts = table.Column<int>(type: "int", nullable: false),
+                    LockoutEnd = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -112,13 +71,39 @@ namespace WebTinTuc.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "News",
+                columns: table => new
+                {
+                    NewId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Abstract = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PostedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ViewCount = table.Column<int>(type: "int", nullable: false),
+                    IsApprove = table.Column<bool>(type: "bit", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fk_UserId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_News", x => x.NewId);
+                    table.ForeignKey(
+                        name: "FK_News_Users_Fk_UserId",
+                        column: x => x.Fk_UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Comments",
                 columns: table => new
                 {
                     CommentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsApprove = table.Column<bool>(type: "bit", nullable: false),
                     Fk_UserId = table.Column<int>(type: "int", nullable: false),
                     Fk_NewId = table.Column<int>(type: "int", nullable: false),
@@ -171,6 +156,30 @@ namespace WebTinTuc.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "NewsCategory",
+                columns: table => new
+                {
+                    CategoriesCategoryId = table.Column<int>(type: "int", nullable: false),
+                    NewsNewId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NewsCategory", x => new { x.CategoriesCategoryId, x.NewsNewId });
+                    table.ForeignKey(
+                        name: "FK_NewsCategory_Categories_CategoriesCategoryId",
+                        column: x => x.CategoriesCategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_NewsCategory_News_NewsNewId",
+                        column: x => x.NewsNewId,
+                        principalTable: "News",
+                        principalColumn: "NewId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_Fk_NewId",
                 table: "Comments",
@@ -190,6 +199,11 @@ namespace WebTinTuc.Migrations
                 name: "IX_Favorites_Fk_NewId",
                 table: "Favorites",
                 column: "Fk_NewId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_News_Fk_UserId",
+                table: "News",
+                column: "Fk_UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_NewsCategory_NewsNewId",
@@ -215,13 +229,13 @@ namespace WebTinTuc.Migrations
                 name: "NewsCategory");
 
             migrationBuilder.DropTable(
-                name: "Users");
-
-            migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "News");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Roles");

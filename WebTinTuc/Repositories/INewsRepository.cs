@@ -5,6 +5,7 @@ namespace WebTinTuc.Repositories
     public interface INewsRepository
     {
         Task<IEnumerable<News>> GetAll();
+        Task<IEnumerable<News>> GetApproveNews();
         Task<News> GetById(int id);
         Task AddAsync(News news);
         Task UpdateAsync(News news);

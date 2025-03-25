@@ -1,4 +1,4 @@
-﻿﻿@{
+﻿@{
     ViewData["Title"] = "Đăng ký";
 }
 
@@ -31,9 +31,7 @@
                     <div class="mb-3">
                         <label for="address" class="form-label">Địa chỉ</label>
                         <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ" />
-
                     </div>
-
                     <div class="mb-3">
                         <label for="password" class="form-label">Mật khẩu</label>
                         <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" required />
@@ -59,6 +57,18 @@
     </div>
 </div>
 
+<!-- Circular Spinner Overlay -->
+<div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body text-center">
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+                <p class="text-white mt-2">Vui lòng chờ...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     <script>
         (function () {
@@ -68,7 +78,7 @@
             const phoneRegex = /^(?:\+84|0)(?:3[2-9]|5[6|8|9]|7[0|6-9]|8[1-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
             const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]*$/;
 
-            form.addEventListener('submit', async function(e) {
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
 
                 const fullName = document.getElementById('fullName').value;
@@ -128,6 +138,10 @@
                     return;
                 }
 
+                // Hiển thị spinner tròn
+                const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+                loadingModal.show();
+
                 try {
                     const response = await fetch('/api/Account/register', {
                         method: 'POST',
@@ -136,6 +150,9 @@
                         },
                         body: JSON.stringify({ fullName, email, password, phoneNumber, dateOfBirth, address })
                     });
+
+                    // Ẩn spinner sau khi nhận phản hồi
+                    loadingModal.hide();
 
                     if (response.ok) {
                         const data = await response.json();
@@ -146,13 +163,14 @@
                         alert(error.message || 'Đăng ký thất bại!');
                     }
                 } catch (err) {
+                    loadingModal.hide();
                     alert('Đã xảy ra lỗi: ' + err.message);
                 }
             });
 
             // Reset validation khi người dùng nhập lại
             form.querySelectorAll('input').forEach(input => {
-                input.addEventListener('input', function() {
+                input.addEventListener('input', function () {
                     if (form.classList.contains('was-validated')) {
                         form.classList.remove('was-validated');
                     }

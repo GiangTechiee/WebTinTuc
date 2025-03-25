@@ -16,8 +16,8 @@ namespace WebTinTuc.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var newsList = await _newsRepository.GetAll();
-            return View(newsList);
+            var approvedNews = await _newsRepository.GetApproveNews();
+            return View(approvedNews);
         }
 
         public IActionResult Privacy()

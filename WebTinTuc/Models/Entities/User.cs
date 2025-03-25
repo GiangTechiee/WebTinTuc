@@ -69,6 +69,9 @@ namespace WebTinTuc.Models.Entities
         public Role Role { get; set; }
 
 
+        public ICollection<News> News { get; set; } = new List<News>();
+
+
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
 

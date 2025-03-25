@@ -37,6 +37,13 @@ namespace WebTinTuc.Data
                 .HasForeignKey(c => c.Fk_NewId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // quan hệ 1-N giữa User và News
+            modelBuilder.Entity<News>()
+                .HasOne(n => n.User)
+                .WithMany(u => u.News)
+                .HasForeignKey(n => n.Fk_UserId)
+                .OnDelete(DeleteBehavior.Restrict); // Hoặc Cascade tùy yêu cầu
+
             // Cấu hình composite primary key cho Favorite
             modelBuilder.Entity<Favorite>()
                 .HasKey(f => new { f.Fk_UserId, f.Fk_NewId });

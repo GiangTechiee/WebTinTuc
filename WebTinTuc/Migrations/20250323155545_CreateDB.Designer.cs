@@ -12,7 +12,7 @@ using WebTinTuc.Data;
 namespace WebTinTuc.Migrations
 {
     [DbContext(typeof(WebTinTucContext))]
-    [Migration("20250318104412_CreateDB")]
+    [Migration("20250323155545_CreateDB")]
     partial class CreateDB
     {
         /// <inheritdoc />
@@ -75,7 +75,7 @@ namespace WebTinTuc.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<DateTime>("CreateAt")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Fk_NewId")
@@ -136,6 +136,9 @@ namespace WebTinTuc.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Fk_UserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -154,6 +157,8 @@ namespace WebTinTuc.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("NewId");
+
+                    b.HasIndex("Fk_UserId");
 
                     b.ToTable("News");
                 });
@@ -205,6 +210,9 @@ namespace WebTinTuc.Migrations
                     b.Property<string>("EmailConfirmationToken")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FailedLoginAttempts")
+                        .HasColumnType("int");
+
                     b.Property<int>("Fk_RoleId")
                         .HasColumnType("int");
 
@@ -215,6 +223,9 @@ namespace WebTinTuc.Migrations
 
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LockoutEnd")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
@@ -295,6 +306,17 @@ namespace WebTinTuc.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("WebTinTuc.Models.Entities.News", b =>
+                {
+                    b.HasOne("WebTinTuc.Models.Entities.User", "User")
+                        .WithMany("News")
+                        .HasForeignKey("Fk_UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("WebTinTuc.Models.Entities.User", b =>
                 {
                     b.HasOne("WebTinTuc.Models.Entities.Role", "Role")
@@ -328,6 +350,8 @@ namespace WebTinTuc.Migrations
                     b.Navigation("Comments");
 
                     b.Navigation("Favorites");
+
+                    b.Navigation("News");
                 });
 #pragma warning restore 612, 618
         }

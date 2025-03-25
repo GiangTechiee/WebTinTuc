@@ -1,0 +1,124 @@
+﻿@model WebTinTuc.Models.Entities.News
+
+@{
+    ViewData["Title"] = "Chỉnh sửa bài viết";
+}
+
+<div class="container py-4">
+    <h1 class="mb-4">Chỉnh sửa bài viết</h1>
+
+    <form asp-action="Edit" enctype="multipart/form-data" id="editForm">
+        <input type="hidden" asp-for="NewId" />
+        @Html.AntiForgeryToken()
+        <div class="row g-3">
+            <div class="col-12">
+                <div class="form-floating">
+                    <input asp-for="Title" class="form-control" required maxlength="255" data-initial="@Model.Title" />
+                    <label asp-for="Title">Tiêu đề</label>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-floating">
+                    <textarea asp-for="Abstract" class="form-control" required maxlength="500" style="height: 100px" data-initial="@Model.Abstract"></textarea>
+                    <label asp-for="Abstract">Tóm tắt</label>
+                    <span asp-validation-for="Abstract" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-floating">
+                    <textarea asp-for="Content" class="form-control" required style="height: 200px" data-initial="@Model.Content"></textarea>
+                    <label asp-for="Content">Nội dung</label>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="imageFile" class="form-label">Hình ảnh (Để trống nếu không thay đổi)</label>
+                    <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*" />
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="@Model.FullImagePath" id="imagePreview" class="img-fluid mt-2" style="max-height: 200px;" alt="Current Image" />
+                    }
+                    else
+                    {
+                        <img src="/images/default-news.jpg" id="imagePreview" class="img-fluid mt-2" style="max-height: 200px;" alt="Default Image" />
+                    }
+                </div>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100" id="saveButton" disabled>Lưu thay đổi</button>
+            </div>
+            <div class="col-12 text-center">
+                <a href="@Url.Action("MyPosts", "News")" class="btn btn-secondary mt-2">Quay lại</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const form = document.getElementById('editForm');
+        const saveButton = document.getElementById('saveButton');
+        const initialData = {
+            title: '@Model.Title' || '',
+            abstract: '@Model.Abstract' || '',
+            content: '@Model.Content' || '',
+            image: '@Model.Image' || ''
+        };
+
+        // Hàm kiểm tra thay đổi
+        function checkChanges() {
+            const titleInput = form.querySelector('[name="Title"]');
+            const abstractInput = form.querySelector('[name="Abstract"]');
+            const contentInput = form.querySelector('[name="Content"]');
+            const imageInput = form.querySelector('#imageFile');
+
+            const currentData = {
+                title: titleInput ? titleInput.value : initialData.title,
+                abstract: abstractInput ? abstractInput.value : initialData.abstract,
+                content: contentInput ? contentInput.value : initialData.content,
+                image: imageInput && imageInput.files.length > 0 ? 'changed' : initialData.image
+            };
+
+            const hasChanges =
+                currentData.title !== initialData.title ||
+                currentData.abstract !== initialData.abstract ||
+                currentData.content !== initialData.content ||
+                currentData.image !== initialData.image;
+
+            saveButton.disabled = !hasChanges;
+            saveButton.classList.toggle('btn-primary', hasChanges);
+            saveButton.classList.toggle('btn-secondary', !hasChanges);
+        }
+
+        // Gắn sự kiện thay đổi
+        form.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', checkChanges);
+        });
+
+        // Preview hình ảnh
+        const imageFileInput = document.getElementById('imageFile');
+        if (imageFileInput) {
+            imageFileInput.addEventListener('change', function (e) {
+                const preview = document.getElementById('imagePreview');
+                if (e.target.files && e.target.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        preview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(e.target.files[0]);
+                }
+                checkChanges();
+            });
+        }
+
+        // Kiểm tra ban đầu
+        checkChanges();
+    </script>
+}

@@ -26,7 +26,7 @@ namespace WebTinTuc.Services
                 PhoneNumber = userDto.PhoneNumber,
                 Email = userDto.Email,
                 DateOfBirth = userDto.DateOfBirth,
-                Fk_RoleId = 1,
+                Fk_RoleId = 2,
                 CreatedAt = DateTime.Now,
                 Avatar = "default-avatar.jpg",
                 IsEmailConfirmed = false,
@@ -86,6 +86,33 @@ namespace WebTinTuc.Services
             user.TokenExpiration = null;
 
             await _userRepository.Update(user);
+        }
+
+        public async Task<int> GetOrCreateDefaultUserId()
+        {
+            var defaultUser = await _userRepository.GetByUsername("defaultuser@system.com");
+            if (defaultUser == null)
+            {
+                defaultUser = new User
+                {
+                    FullName = "Default User",
+                    Email = "defaultuser@system.com",
+                    PasswordHash = "defaultpassword", // Sẽ được hash trong Register
+                    PhoneNumber = "0999999999", // Giá trị giả, cần thay đổi nếu cần
+                    Fk_RoleId = 2,
+                    CreatedAt = DateTime.Now,
+                    Avatar = "default-avatar.jpg",
+                    IsEmailConfirmed = true // Không cần xác nhận email
+                };
+                await _userRepository.Register(defaultUser);
+            }
+            return defaultUser.UserId;
+        }
+
+        public async Task DeleteUserAsync(int userId)
+        {
+            var defaultUserId = await GetOrCreateDefaultUserId();
+            await _userRepository.DeleteUserAsync(userId, defaultUserId);
         }
     }
 }

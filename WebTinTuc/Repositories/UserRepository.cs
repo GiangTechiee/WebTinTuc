@@ -94,9 +94,51 @@ namespace WebTinTuc.Repositories
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
+
+        public async Task DeleteUserAsync(int userId, int defaultUserId)
+        {
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    var user = await _context.Users.FindAsync(userId);
+                    if (user == null)
+                        throw new Exception("Không tìm thấy người dùng.");
+
+                    // Cập nhật News sang user mặc định
+                    var newsToUpdate = await _context.News
+                        .Where(n => n.Fk_UserId == userId)
+                        .ToListAsync();
+
+                    foreach (var news in newsToUpdate)
+                    {
+                        news.Fk_UserId = defaultUserId;
+                    }
+
+                    _context.Users.Remove(user);
+                    await _context.SaveChangesAsync();
+
+                    await transaction.CommitAsync();
+                }
+                catch (Exception)
+                {
+                    await transaction.RollbackAsync();
+                    throw;
+                }
+            }
+        }
         public async Task<IDbContextTransaction> BeginTransactionAsync()
         {
             return await _context.Database.BeginTransactionAsync();
+        }
+
+        public async Task<bool> IsAdminAsync(int userId)
+        {
+            var user = await _context.Users
+                .Include(u => u.Role) 
+                .FirstOrDefaultAsync(u => u.UserId == userId);
+
+            return user != null && user.Role != null && user.Role.RoleId == 1; // 1 là role của admin
         }
     }
 }

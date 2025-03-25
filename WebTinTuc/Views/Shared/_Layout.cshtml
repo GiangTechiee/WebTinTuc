@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - WebNC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebNC.styles.css" asp-append-version="true" />
+
     <style>
         .avatar {
             width: 40px;
@@ -49,8 +49,14 @@
                         <!-- Thêm bài viết (hiển thị khi đã đăng nhập) -->
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item">
-                                <a class="btn btn-outline-primary border-0 py-2" asp-controller="News" asp-action="Create">Thêm bài viết</a>
+                            <li class="nav-item dropdown">
+                                <a class="btn btn-outline-primary border-0 py-2" href="#" id="manageNewsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Quản lý bài viết
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="manageNewsDropdown">
+                                    <li><a class="dropdown-item" asp-controller="News" asp-action="Create">Đăng bài</a></li>
+                                    <li><a class="dropdown-item" asp-controller="News" asp-action="MyPosts">Bài viết của tôi</a></li>
+                                </ul>
                             </li>
                         }
 

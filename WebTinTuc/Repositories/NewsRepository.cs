@@ -15,12 +15,23 @@ namespace WebTinTuc.Repositories
 
         public async Task<IEnumerable<News>> GetAll()
         {
-            return await _context.News.ToListAsync();
+            return await _context.News
+                .Include(n => n.User)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<News>> GetApproveNews()
+        {
+            return await _context.News
+                .Include(n => n.User)
+                .Where(n => n.IsApprove)
+                .ToListAsync();
         }
 
         public async Task<News?> GetById(int id)
         {
             return await _context.News
+                .Include(n => n.User)
                 .Include(n => n.Comments)
                     .ThenInclude(c => c.User)
                 .Include(n => n.Categories)

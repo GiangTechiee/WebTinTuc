@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\images\\default-avatar.jpg"
     },
     {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1.jpg",
-      "PackagePath": "staticwebassets\\images\\new1.jpg"
-    },
-    {
       "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

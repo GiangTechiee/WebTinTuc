@@ -1,4 +1,4 @@
-﻿﻿@{
+﻿@{
     ViewData["Title"] = "Đăng nhập";
 }
 
@@ -28,6 +28,18 @@
     </div>
 </div>
 
+<!-- Circular Spinner Overlay -->
+<div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body text-center">
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+                <p class="text-white mt-2">Đang đăng nhập...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     <script>
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
@@ -36,21 +48,33 @@
             const loginId = document.getElementById('loginId').value;
             const password = document.getElementById('password').value;
 
-            const response = await fetch('/api/Account/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ loginId, password })
-            });
+            // Hiển thị spinner
+            const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+            loadingModal.show();
 
-            if (response.ok) {
-                const data = await response.json();
-                alert('Đăng nhập thành công!');
-                window.location.href = '/Home/Index';
-            } else {
-                const error = await response.json();
-                alert(error.message || 'Đăng nhập thất bại!');
+            try {
+                const response = await fetch('/api/Account/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ loginId, password })
+                });
+
+                // Ẩn spinner sau khi nhận phản hồi
+                loadingModal.hide();
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert('Đăng nhập thành công!');
+                    window.location.href = '/Home/Index';
+                } else {
+                    const error = await response.json();
+                    alert(error.message || 'Đăng nhập thất bại!');
+                }
+            } catch (err) {
+                loadingModal.hide();
+                alert('Đã xảy ra lỗi: ' + err.message);
             }
         });
     </script>
