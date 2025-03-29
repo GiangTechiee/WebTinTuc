@@ -1,0 +1,52 @@
+﻿@model WebTinTuc.Models.Entities.Category
+
+@{
+    ViewData["Title"] = Model.CategoryName + " - Vietnam codeCore";
+}
+
+<div class="container py-4">
+    <h1 class="mb-4">@Model.CategoryName</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Thông tin danh mục</h5>
+            <p class="card-text">
+                <strong>Tên danh mục:</strong> @Model.CategoryName
+            </p>
+            <!-- Thêm các thông tin khác của danh mục nếu có (ví dụ: mô tả) -->
+            @if (!string.IsNullOrEmpty(Model.Description)) // Giả sử Category có thuộc tính Description
+            {
+                <p class="card-text" style="white-space: pre-wrap;">
+                    <strong>Mô tả:</strong> @Model.Description
+                </p>
+            }
+
+            <!-- Hiển thị danh sách tin tức trong danh mục -->
+            @if (Model.News.Any())
+            {
+                <h5 class="mt-4">Tin tức trong danh mục</h5>
+                <ul class="list-group">
+                    @foreach (var news in Model.News)
+                    {
+                        <li class="list-group-item">
+                            <a href="@Url.Action("Details", "News", new { id = news.NewId })">
+                                @news.Title
+                            </a>
+                            <small class="text-muted"> - @news.PostedDate.ToString("dd/MM/yyyy HH:mm")</small>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-muted mt-4">Chưa có tin tức nào trong danh mục này.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Nút quay lại -->
+    @* <div class="text-center mt-4">
+        <a href="@Url.Action("Details", "News", new { id = ViewBag.NewsId })" class="btn btn-outline-secondary">Quay lại bài viết</a>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary">Quay lại trang chủ</a>
+    </div> *@
+</div>

@@ -43,6 +43,23 @@
                 </div>
             </div>
 
+            <!-- Dropdown danh mục -->
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="categoryDropdown" class="form-label">Danh mục</label>
+                    <select id="categoryDropdown" class="form-control custom-dropdown">
+                        <option value="" disabled selected>Chọn danh mục</option>
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            <option value="@category.CategoryId" data-name="@category.CategoryName">@category.CategoryName</option>
+                        }
+                    </select>
+                    <div id="selectedCategories" class="mt-2"></div>
+                    <input type="hidden" id="categoryIds" name="categoryIds" />
+                    <span id="categoryIdsError" class="text-danger"></span>
+                </div>
+            </div>
+
             <div class="col-12">
                 <button type="submit" class="btn btn-primary w-100">Đăng bài</button>
             </div>
@@ -63,6 +80,8 @@
             const imageFileInput = document.getElementById('imageFile');
             const imageFileError = document.getElementById('imageFileError');
             const messageContainer = document.getElementById('messageContainer');
+            const categoryIdsInput = document.getElementById('categoryIds'); 
+            const categoryIdsError = document.getElementById('categoryIdsError');
 
             // Kiểm tra xem có chọn ảnh không
             if (!imageFileInput.files || imageFileInput.files.length === 0) {
@@ -71,6 +90,19 @@
             } else {
                 imageFileError.textContent = ''; // Xóa thông báo lỗi nếu có ảnh
             }
+
+            // Lấy danh sách categoryIds từ các thẻ đã chọn
+            const selectedCategories = Array.from(document.querySelectorAll('#selectedCategories .category-tag'))
+                .map(tag => tag.dataset.id);
+            if (selectedCategories.length === 0) {
+                categoryIdsError.textContent = 'Vui lòng chọn ít nhất một danh mục';
+                return;
+            } else {
+                categoryIdsError.textContent = '';
+            }
+
+            // Cập nhật giá trị categoryIds vào input ẩn
+            categoryIdsInput.value = selectedCategories.join(',');
 
             const formData = new FormData(form);
 
@@ -96,6 +128,8 @@
                         </div>`;
                     form.reset();
                     document.getElementById('imagePreview').innerHTML = '';
+                    document.getElementById('selectedCategories').innerHTML = '';
+                    categoryIdsInput.value = '';
                 }
             } catch (error) {
                 console.error('Chi tiết lỗi:', error);
@@ -120,11 +154,72 @@
                 imageFileError.textContent = 'Hình ảnh là bắt buộc'; // Hiển thị lỗi nếu bỏ chọn ảnh
             }
         });
+
+
+        // Xử lý dropdown danh mục
+        const categoryDropdown = document.getElementById('categoryDropdown');
+        const selectedCategoriesContainer = document.getElementById('selectedCategories');
+
+        categoryDropdown.addEventListener('change', function () {
+            const selectedOption = this.options[this.selectedIndex];
+            const categoryId = selectedOption.value;
+            const categoryName = selectedOption.dataset.name;
+
+            // Kiểm tra xem danh mục đã được chọn chưa
+            if (categoryId && !document.querySelector(`.category-tag[data-id="${categoryId}"]`)) {
+                const categoryTag = document.createElement('span');
+                categoryTag.className = 'category-tag badge bg-secondary me-1 mb-1';
+                categoryTag.dataset.id = categoryId;
+                categoryTag.innerHTML = `
+                    ${categoryName}
+                    <span class="remove-category ms-1" style="cursor: pointer;">×</span>
+                `;
+                selectedCategoriesContainer.appendChild(categoryTag);
+
+                // Xử lý nút xóa
+                categoryTag.querySelector('.remove-category').addEventListener('click', function () {
+                    categoryTag.remove();
+                });
+            }
+
+            // Reset dropdown về giá trị mặc định
+            this.value = '';
+        });
     </script>
 
     <style>
         .form-floating > textarea {
             resize: vertical;
+        }
+
+        .category-tag {
+            position: relative;
+            padding: 5px 20px 5px 10px;
+        }
+
+        .remove-category {
+            position: absolute;
+            top: 0;
+            right: 5px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .custom-dropdown {
+            appearance: none; /* Xóa giao diện mặc định của trình duyệt */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='5' viewBox='0 0 10 5'><path fill='%23000' d='M0 0h10L5 5z'/></svg>") no-repeat right 10px center; /* Thêm mũi tên SVG */
+            background-size: 10px 5px; /* Kích thước mũi tên */
+            padding-right: 30px; /* Đảm bảo nội dung không đè lên mũi tên */
+            border: 1px solid #ced4da; /* Giữ viền mặc định của Bootstrap */
+            border-radius: 0.25rem;
+        }
+
+        .custom-dropdown:focus {
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
         }
 
         @@media (max-width: 768px) {

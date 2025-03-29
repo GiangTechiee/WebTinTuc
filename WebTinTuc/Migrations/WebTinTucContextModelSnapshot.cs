@@ -137,7 +137,6 @@ namespace WebTinTuc.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsApprove")
@@ -275,7 +274,8 @@ namespace WebTinTuc.Migrations
 
                     b.HasOne("WebTinTuc.Models.Entities.Comment", "ParentComment")
                         .WithMany("Replies")
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("News");
 

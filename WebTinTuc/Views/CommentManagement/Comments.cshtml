@@ -1,0 +1,218 @@
+﻿@model List<WebTinTuc.Models.Entities.Comment>
+
+<div class="container mt-4">
+    <h2>Quản lý bình luận - Bài viết #@ViewBag.NewId</h2>
+
+    @Html.AntiForgeryToken()
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-3" id="commentTabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link @(ViewBag.Tab == "all" ? "active" : "")" asp-action="Comments" asp-route-newId="@ViewBag.NewId" asp-route-tab="all">Tất cả</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @(ViewBag.Tab == "approved" ? "active" : "")" asp-action="Comments" asp-route-newId="@ViewBag.NewId" asp-route-tab="approved">Đã duyệt</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @(ViewBag.Tab == "rejected" ? "active" : "")" asp-action="Comments" asp-route-newId="@ViewBag.NewId" asp-route-tab="rejected">Đã từ chối</a>
+        </li>
+    </ul>
+
+    <!-- Danh sách bình luận -->
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nội dung</th>
+                    <th>Người đăng</th>
+                    <th>Thời gian</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="commentList">
+                @foreach (var comment in Model)
+                {
+                    <tr data-comment-id="@comment.CommentId">
+                        <td>@comment.Content</td>
+                        <td>@comment.User.FullName</td>
+                        <td>@comment.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>
+                            @if (comment.IsApprove)
+                            {
+                                <span class="badge bg-success">Đã duyệt</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Đã từ chối</span>
+                            }
+                        </td>
+                        <td>
+                            @if (comment.IsApprove)
+                            {
+                                <button class="btn btn-warning btn-sm reject-btn" data-id="@comment.CommentId">Từ chối</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-success btn-sm approve-btn" data-id="@comment.CommentId">Duyệt lại</button>
+                            }
+                            <button class="btn btn-danger btn-sm delete-btn" data-id="@comment.CommentId">Xóa</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phân trang -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                <a class="page-link" asp-action="Comments" asp-route-newId="@ViewBag.NewId" asp-route-tab="@ViewBag.Tab" asp-route-page="@(ViewBag.CurrentPage - 1)">Trước</a>
+            </li>
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-action="Comments" asp-route-newId="@ViewBag.NewId" asp-route-tab="@ViewBag.Tab" asp-route-page="@i">@i</a>
+                </li>
+            }
+            <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                <a class="page-link" asp-action="Comments" asp-route-newId="@ViewBag.NewId" asp-route-tab="@ViewBag.Tab" asp-route-page="@(ViewBag.CurrentPage + 1)">Sau</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+@section Scripts {
+    <script>
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        if (!token) {
+            console.error('Không tìm thấy AntiForgeryToken');
+            alert('Lỗi: Không thể tải token xác thực. Vui lòng tải lại trang.');
+        }
+
+
+        // Từ chối bình luận
+        function attachRejectEvents() {
+            document.querySelectorAll('.reject-btn').forEach(btn => {
+                btn.removeEventListener('click', handleReject);
+                btn.addEventListener('click', handleReject);
+            });
+        }
+
+        async function handleReject() {
+            const commentId = this.getAttribute('data-id');
+            const formData = new FormData();
+            formData.append('commentId', commentId);
+            formData.append('__RequestVerificationToken', token);
+
+            try {
+                const response = await fetch('/CommentManagement/RejectComment', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (response.ok && result.success) {
+                    const row = document.querySelector(`tr[data-comment-id="${commentId}"]`);
+                    row.querySelector('.badge').classList.replace('bg-success', 'bg-danger');
+                    row.querySelector('.badge').textContent = 'Đã từ chối';
+                    row.querySelector('.reject-btn').outerHTML = '<button class="btn btn-success btn-sm approve-btn" data-id="' + commentId + '">Duyệt lại</button>';
+                    attachApproveEvents();
+                } else {
+                    console.error('Lỗi khi từ chối:', response.status, result.message || response.statusText);
+                    alert('Không thể từ chối bình luận: ' + (result.message || response.statusText));
+                }
+            } catch (error) {
+                console.error('Lỗi kết nối:', error);
+                alert('Lỗi kết nối khi từ chối bình luận.');
+            }
+        }
+
+        // Duyệt lại bình luận
+        function attachApproveEvents() {
+            document.querySelectorAll('.approve-btn').forEach(btn => {
+                btn.removeEventListener('click', handleApprove);
+                btn.addEventListener('click', handleApprove);
+            });
+        }
+
+        async function handleApprove() {
+            const commentId = this.getAttribute('data-id');
+            const formData = new FormData();
+            formData.append('commentId', commentId);
+            formData.append('__RequestVerificationToken', token);
+
+            try {
+                const response = await fetch('/CommentManagement/ApproveComment', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (response.ok && result.success) {
+                    const row = document.querySelector(`tr[data-comment-id="${commentId}"]`);
+                    row.querySelector('.badge').classList.replace('bg-danger', 'bg-success');
+                    row.querySelector('.badge').textContent = 'Đã duyệt';
+                    row.querySelector('.approve-btn').outerHTML = '<button class="btn btn-warning btn-sm reject-btn" data-id="' + commentId + '">Từ chối</button>';
+                    attachRejectEvents();
+                } else {
+                    console.error('Lỗi khi duyệt lại:', response.status, result.message || response.statusText);
+                    alert('Không thể duyệt lại bình luận: ' + (result.message || response.statusText));
+                }
+            } catch (error) {
+                console.error('Lỗi kết nối:', error);
+                alert('Lỗi kết nối khi duyệt lại bình luận.');
+            }
+        }
+
+        // Xóa bình luận
+        function attachDeleteEvents() {
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.removeEventListener('click', handleDelete);
+                btn.addEventListener('click', handleDelete);
+            });
+        }
+
+        async function handleDelete() {
+            if (confirm('Bạn có chắc chắn muốn xóa bình luận này?')) {
+                const commentId = this.getAttribute('data-id');
+                if (!commentId) {
+                    console.error('Không tìm thấy commentId');
+                    alert('Lỗi: Không thể xác định bình luận để xóa.');
+                    return;
+                }
+
+
+                const formData = new FormData();
+                formData.append('commentId', commentId);
+                formData.append('__RequestVerificationToken', token);
+
+                try {
+                    const response = await fetch('/CommentManagement/DeleteComment', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+                    if (response.ok && result.success) {
+                        const row = document.querySelector(`tr[data-comment-id="${commentId}"]`);
+                        if (row) {
+                            row.remove();
+                        } else {
+                            console.warn('Không tìm thấy hàng để xóa trong DOM');
+                        }
+                    } else {
+                        console.error('Lỗi khi xóa:', response.status, result.message || response.statusText);
+                        alert('Không thể xóa bình luận: ' + (result.message || response.statusText));
+                    }
+                } catch (error) {
+                    console.error('Lỗi kết nối:', error);
+                    alert('Lỗi kết nối khi xóa bình luận.');
+                }
+            }
+        }
+
+        // Gắn sự kiện ban đầu
+        attachRejectEvents();
+        attachApproveEvents();
+        attachDeleteEvents();
+    </script>
+}

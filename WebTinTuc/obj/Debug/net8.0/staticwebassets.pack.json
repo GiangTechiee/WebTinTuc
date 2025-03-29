@@ -13,8 +13,36 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev.jpg",
+      "PackagePath": "staticwebassets\\images\\backend-dev.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer.jpeg",
+      "PackagePath": "staticwebassets\\images\\data-engineer.jpeg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_1.jpeg",
+      "PackagePath": "staticwebassets\\images\\data-engineer_1.jpeg"
+    },
+    {
       "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar.jpg",
       "PackagePath": "staticwebassets\\images\\default-avatar.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react.jpg",
+      "PackagePath": "staticwebassets\\images\\frontend-react.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1.jpg",
+      "PackagePath": "staticwebassets\\images\\new1.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_1.jpg",
+      "PackagePath": "staticwebassets\\images\\new1_1.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh.jpg",
+      "PackagePath": "staticwebassets\\images\\thong-nhat-blade-xanh.jpg"
     },
     {
       "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\js\\site.js",

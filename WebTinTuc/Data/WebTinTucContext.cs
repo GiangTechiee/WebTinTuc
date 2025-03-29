@@ -37,6 +37,12 @@ namespace WebTinTuc.Data
                 .HasForeignKey(c => c.Fk_NewId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Comment>()
+                .HasMany(c => c.Replies)
+                .WithOne(c => c.ParentComment)
+                .HasForeignKey(c => c.ParentId)
+                .OnDelete(DeleteBehavior.NoAction);
+
             // quan hệ 1-N giữa User và News
             modelBuilder.Entity<News>()
                 .HasOne(n => n.User)

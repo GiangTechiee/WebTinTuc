@@ -1,6 +1,13 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\backend-dev.jpg
+wwwroot\images\data-engineer.jpeg
+wwwroot\images\data-engineer_1.jpeg
 wwwroot\images\default-avatar.jpg
+wwwroot\images\frontend-react.jpg
+wwwroot\images\new1.jpg
+wwwroot\images\new1_1.jpg
+wwwroot\images\thong-nhat-blade-xanh.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

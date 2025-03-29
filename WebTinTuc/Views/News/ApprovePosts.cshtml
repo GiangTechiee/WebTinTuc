@@ -1,0 +1,147 @@
+﻿@model IEnumerable<WebTinTuc.Models.Entities.News>
+
+@{
+    ViewData["Title"] = "Duyệt bài viết";
+}
+
+<div class="container py-4">
+    <h1 class="mb-4 text-center">Duyệt bài viết</h1>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center" role="alert">
+            Không có bài viết nào cần duyệt.
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            @foreach (var news in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <a href="@Url.Action("Details", "News", new { id = news.NewId })">
+                            @if (!string.IsNullOrEmpty(news.Image))
+                            {
+                                <img src="@news.FullImagePath" class="card-img-top" alt="@news.Title" style="object-fit: cover; height: 200px;">
+                            }
+                            else
+                            {
+                                <img src="/images/default-news.jpg" class="card-img-top" alt="No image" style="object-fit: cover; height: 200px;">
+                            }
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="text-dark text-decoration-none text-truncate d-block">
+                                    @news.Title
+                                </a>
+                            </h5>
+                            <p class="card-text text-muted text-truncate">@news.Abstract</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    Người đăng: @news.User.FullName <br />
+                                    @news.PostedDate.ToString("dd/MM/yyyy")
+                                </small>
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex justify-content-between flex-wrap gap-2">
+                                <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="btn btn-outline-primary btn-sm">
+                                    Xem chi tiết
+                                </a>
+                                <button class="btn btn-success btn-sm btn-approve" data-id="@news.NewId" data-title="@news.Title">
+                                    Duyệt bài
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<!-- Modal xác nhận duyệt bài -->
+<div class="modal fade" id="approveModal" tabindex="-1" aria-labelledby="approveModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="approveModalLabel">Xác nhận duyệt bài</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @Html.AntiForgeryToken() <!-- Thêm token chống giả mạo -->
+                Bạn có chắc muốn duyệt bài viết "<span id="approveTitle"></span>" không?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-success" id="confirmApprove">Duyệt</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let currentModal = null;
+        let currentNewsId = null;
+
+        document.querySelectorAll('.btn-approve').forEach(button => {
+            button.addEventListener('click', function () {
+                const newsId = this.getAttribute('data-id');
+                const newsTitle = this.getAttribute('data-title');
+
+                document.getElementById('approveTitle').textContent = newsTitle;
+                currentNewsId = newsId;
+
+                // Hiển thị modal
+                currentModal = new bootstrap.Modal(document.getElementById('approveModal'), {
+                    backdrop: 'static',
+                    keyboard: false
+                });
+                currentModal.show();
+            });
+        });
+
+        document.getElementById('confirmApprove').addEventListener('click', async function () {
+            const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
+            if (!tokenInput) {
+                console.error('Không tìm thấy RequestVerificationToken');
+                alert('Lỗi: Không tìm thấy token xác thực. Vui lòng tải lại trang.');
+                currentModal.hide();
+                return;
+            }
+
+            try {
+                const response = await fetch('@Url.Action("Approve", "News")/' + currentNewsId, {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'RequestVerificationToken': tokenInput.value
+                    }
+                });
+
+                if (response.ok) {
+                    currentModal.hide();
+                    alert('Bài viết đã được duyệt!');
+                    window.location.reload();
+                } else {
+                    currentModal.hide();
+                    alert('Lỗi khi duyệt bài: ' + response.statusText);
+                }
+            } catch (error) {
+                currentModal.hide();
+                alert('Lỗi kết nối: ' + error.message);
+            }
+        });
+
+        // Xử lý khi modal ẩn
+        document.getElementById('approveModal').addEventListener('hidden.bs.modal', function () {
+            if (document.activeElement) {
+                document.activeElement.blur();
+            }
+            currentModal = null;
+            currentNewsId = null;
+        });
+    </script>
+}

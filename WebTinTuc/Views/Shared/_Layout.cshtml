@@ -36,7 +36,7 @@
 
                         <!-- Dropdown Tin tức -->
                         <li class="nav-item dropdown">
-                            <a class="btn btn-outline-primary border-0 py-2" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="btn btn-outline-primary border-0 py-2 dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Tin tức
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="newsDropdown">
@@ -50,12 +50,18 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item dropdown">
-                                <a class="btn btn-outline-primary border-0 py-2" href="#" id="manageNewsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="btn btn-outline-primary border-0 py-2 dropdown-toggle" href="#" id="manageNewsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Quản lý bài viết
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="manageNewsDropdown">
                                     <li><a class="dropdown-item" asp-controller="News" asp-action="Create">Đăng bài</a></li>
                                     <li><a class="dropdown-item" asp-controller="News" asp-action="MyPosts">Bài viết của tôi</a></li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li><a class="dropdown-item" asp-controller="News" asp-action="ApprovePosts">Duyệt bài</a></li>
+                                        <li><a class="dropdown-item" asp-controller="" asp-action="">Quản lý danh mục</a></li>
+                                        <li><a class="dropdown-item" asp-controller="CommentManagement" asp-action="Index">Quản lý bình luận</a></li>
+                                    }
                                 </ul>
                             </li>
                         }
@@ -89,10 +95,10 @@
                                     <span class="ms-2">@User.Identity.Name</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Quản lý tài khoản</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Tài khoản của tôi</a></li>
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li><a class="dropdown-item" asp-controller="Account" asp-action="AdminDashboard">Quản trị</a></li>
+                                        <li><a class="dropdown-item" asp-controller="" asp-action="">Quản lý người dùng</a></li>
                                     }
                                     <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Đăng xuất</a></li>
                                 </ul>

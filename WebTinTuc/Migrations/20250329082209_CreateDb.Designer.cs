@@ -12,8 +12,8 @@ using WebTinTuc.Data;
 namespace WebTinTuc.Migrations
 {
     [DbContext(typeof(WebTinTucContext))]
-    [Migration("20250323162244_UpdateDB")]
-    partial class UpdateDB
+    [Migration("20250329082209_CreateDb")]
+    partial class CreateDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -140,7 +140,6 @@ namespace WebTinTuc.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsApprove")
@@ -278,7 +277,8 @@ namespace WebTinTuc.Migrations
 
                     b.HasOne("WebTinTuc.Models.Entities.Comment", "ParentComment")
                         .WithMany("Replies")
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("News");
 

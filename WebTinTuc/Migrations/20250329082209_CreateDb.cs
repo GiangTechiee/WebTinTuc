@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebTinTuc.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDB : Migration
+    public partial class CreateDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -82,7 +82,7 @@ namespace WebTinTuc.Migrations
                     PostedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ViewCount = table.Column<int>(type: "int", nullable: false),
                     IsApprove = table.Column<bool>(type: "bit", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Fk_UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

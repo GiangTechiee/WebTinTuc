@@ -6,10 +6,22 @@
     var currentUserId = User.Identity.IsAuthenticated ? int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value) : (int?)null;
 }
 
-
 <style>
     .opacity-50 {
-        opacity: 0.5; /* Làm mờ bình luận chưa duyệt */
+        opacity: 0.5; /* Làm mờ nếu chưa duyệt */
+    }
+
+    .disabled-interaction {
+        pointer-events: none; /* Vô hiệu hóa tương tác */
+        user-select: none; /* Ngăn chọn văn bản */
+    }
+
+    .comment-reply {
+        margin-left: 2rem; /* Lùi bình luận con vào */
+    }
+
+    .reply-form {
+        display: none; /* Ẩn form trả lời mặc định */
     }
 </style>
 
@@ -28,10 +40,35 @@
                         </small>
                     </p>
                     <p class="text-muted">@Model.Abstract</p>
-                    
+                    @if (!Model.IsApprove)
+                    {
+                        <span class="badge bg-warning text-dark">Chưa duyệt</span>
+                    }
                     <hr />
-                    <div class="card-text">
-                        @Html.Raw(Model.Content) <!-- Hiển thị nội dung HTML nếu có -->
+                    <div class="card-text" style="white-space: pre-wrap;">
+                        @Html.Raw(Model.Content)
+                    </div>
+
+                    <!-- Hiển thị danh sách danh mục -->
+                    <div class="mt-3">
+                        <strong>Danh mục:</strong>
+                        @if (Model.Categories.Any())
+                        {
+                            <ul class="list-inline">
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <li class="list-inline-item">
+                                        <a href="@Url.Action("CategoryDetails", "Category", new { id = category.CategoryId })" class="category-link">
+                                            <span class="badge bg-secondary">@category.CategoryName</span>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Chưa có danh mục</span>
+                        }
                     </div>
                 </div>
             </div>
@@ -39,49 +76,49 @@
 
         <!-- Cột vừa bên phải: Bình luận -->
         <div class="col-lg-4 mb-4">
-            <div class="card">
+            <div class="card @(Model.IsApprove ? "" : "opacity-50 disabled-interaction")">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Bình luận</h5>
                 </div>
-                <div class="card-body" style="max-height: 500px; overflow-y: auto;">
-                    @if (Model.Comments.Any())
+                <div class="card-body" style="max-height: 500px; overflow-y: auto;" id="commentSection">
+                    @Html.AntiForgeryToken()
+                    @if (Model.IsApprove)
                     {
-                        @foreach (var comment in Model.Comments)
+                        var visibleComments = Model.Comments
+                        .Where(c => c.ParentId == null && (c.IsApprove || (currentUserId.HasValue && c.Fk_UserId == currentUserId.Value)))
+                        .ToList();
+
+                        if (Model.Comments.Any())
                         {
-                            if (comment.IsApprove || (currentUserId.HasValue && comment.Fk_UserId == currentUserId))
+                            @foreach (var comment in visibleComments)
                             {
-                                <div class="mb-3 border-bottom pb-2 @(comment.IsApprove ? "" : "opacity-50")" >
-                                    <p class="fw-bold mb-1">
-                                        @comment.User.FullName
-                                        <small class="text-muted">
-                                            (@comment.CreatedAt.ToString("dd/MM/yyyy HH:mm"))
-                                        </small>
-                                        @if (!comment.IsApprove)
-                                        {
-                                            <span class="badge bg-warning text-dark ms-2">Chờ duyệt</span>
-                                        }
-                                    </p>
-                                    <p class="mb-0">@comment.Content</p>
-                                </div>
+                                @Html.Partial("_CommentPartial", comment)
                             }
+                        }
+                        else
+                        {
+                            <p class="text-muted">Chưa có bình luận nào.</p>
                         }
                     }
                     else
                     {
-                        <p class="text-muted">Chưa có bình luận nào.</p>
+                        <p class="text-muted">Bài viết chưa được duyệt, không thể xem hoặc thêm bình luận.</p>
                     }
                 </div>
-                <!-- Form thêm bình luận (nếu người dùng đăng nhập) -->
-                @if (User.Identity.IsAuthenticated)
+                <!-- Form thêm bình luận cha -->
+                @if (User.Identity.IsAuthenticated && Model.IsApprove)
                 {
                     <div class="card-footer">
-                        <form asp-action="AddComment" asp-controller="Comment" method="post">
-                            <input type="hidden" name="NewId" value="@Model.NewId" />
-                            <div class="mb-3">
-                                <textarea class="form-control" name="Content" rows="3" placeholder="Viết bình luận của bạn..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Gửi bình luận</button>
-                        </form>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="newCommentContent" rows="3" placeholder="Viết bình luận của bạn..." required></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" id="submitComment">Gửi bình luận</button>
+                    </div>
+                }
+                else if (!Model.IsApprove)
+                {
+                    <div class="card-footer text-muted">
+                        <p>Bài viết chưa được duyệt.</p>
                     </div>
                 }
                 else
@@ -99,13 +136,12 @@
         <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary">Quay lại trang chủ</a>
     </div>
 
-    <!-- tin đã xem gần đây-->
+    <!-- Tin đã xem gần đây -->
     <div class="mt-5">
         <h4>Tin tức đã xem gần đây</h4>
         <div id="recentNews" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3"></div>
     </div>
 </div>
-
 
 @section Scripts {
     <script>
@@ -128,28 +164,25 @@
             const recentNews = JSON.parse(sessionStorage.getItem('recentNews')) || [];
             const recentNewsContainer = document.getElementById('recentNews');
 
-            // Xóa nội dung cũ
             recentNewsContainer.innerHTML = '';
 
-            // Nếu không có tin nào ngoài tin hiện tại
             if (recentNews.length === 0 || (recentNews.length === 1 && recentNews[0].NewId === currentNewId)) {
                 recentNewsContainer.innerHTML = '<p class="text-muted col-12">Chưa có tin tức nào được xem gần đây.</p>';
                 return;
             }
 
-            // Hiển thị các tin đã xem (trừ tin hiện tại)
             recentNews
-                .filter(news => news.NewId !== currentNewId) // Loại bỏ tin hiện tại
+                .filter(news => news.NewId !== currentNewId)
                 .forEach(news => {
                     const newsCard = `
                         <div class="col">
                             <div class="card h-100">
-                                <a href="/News/Detail/${news.NewId}">
+                                <a href="/News/Details/${news.NewId}">
                                     <img src="${news.FullImagePath}" class="card-img-top" alt="${news.Title}" style="height: 100px; object-fit: cover;">
                                 </a>
                                 <div class="card-body p-2">
-                                    <h6 class="card-title mb-0 style="font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                                        <a href="/News/Detail/${news.NewId}" class="text-decoration-none">${news.Title}</a>
+                                    <h6 class="card-title mb-0" style="font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                        <a href="/News/Details/${news.NewId}" class="text-decoration-none">${news.Title}</a>
                                     </h6>
                                 </div>
                             </div>
@@ -159,17 +192,155 @@
                 });
         }
 
-        // Tin tức hiện tại từ Model
         const currentNews = {
             NewId: @Model.NewId,
             Title: "@Model.Title",
             FullImagePath: "@Model.FullImagePath"
         };
 
-        // Lưu tin hiện tại vào Local Storage
         saveRecentNews(currentNews);
-
-        // Hiển thị danh sách tin đã xem
         displayRecentNews(@Model.NewId);
+
+
+
+
+        // Lấy token một lần
+        const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+        if (!token) {
+            console.error('Không tìm thấy RequestVerificationToken');
+        }
+
+        // Thêm bình luận cha bằng Fetch API
+        document.getElementById('submitComment')?.addEventListener('click', async () => {
+            const content = document.getElementById('newCommentContent').value.trim();
+            if (!content) {
+                alert('Vui lòng nhập nội dung bình luận!');
+                return;
+            }
+
+            try {
+                const response = await fetch('@Url.Action("AddComment", "Comment")', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest', 'RequestVerificationToken': token },
+                    body: JSON.stringify({ NewId: @Model.NewId, Content: content })
+                });
+
+                if (response.ok) {
+                    const comment = await response.json();
+                    addCommentToDOM(comment, null);
+                    document.getElementById('newCommentContent').value = '';
+                } else {
+                    alert('Lỗi khi gửi bình luận: ' + response.statusText);
+                }
+            } catch (error) {
+                alert('Lỗi kết nối: ' + error.message);
+            }
+        });
+
+        // Lấy currentUserId từ server-side
+        const currentUserId = @currentUserId?.ToString() || null;
+
+        // Hàm thêm bình luận vào DOM
+        function addCommentToDOM(comment, parentId) {
+            // Kiểm tra nếu bình luận chưa duyệt và không phải của người dùng hiện tại, không hiển thị
+            if (!comment.isApprove && currentUserId && comment.fk_UserId !== parseInt(currentUserId)) {
+                return; // Không thêm vào DOM
+            }
+
+            const commentSection = document.getElementById('commentSection');
+            const newCommentHtml = `
+                <div class="mb-3 border-bottom pb-2 ${parentId ? 'comment-reply' : ''} ${comment.isApprove ? '' : 'opacity-50'}" data-comment-id="${comment.commentId}">
+                    <p class="fw-bold mb-1">
+                        ${comment.userFullName}
+                        <small class="text-muted">(${new Date(comment.createdAt).toLocaleString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })})</small>
+                        ${!comment.isApprove ? '<span class="badge bg-warning text-dark ms-2">Chờ duyệt</span>' : ''}
+                    </p>
+                    <p class="mb-1">${comment.content}</p>
+                    ${@User.Identity.IsAuthenticated.ToString().ToLower() ? `<a href="#" class="text-primary reply-link" data-comment-id="${comment.commentId}">Trả lời</a>
+                    <div class="reply-form mt-2" id="replyForm-${comment.commentId}">
+                        <div class="mb-2">
+                            <textarea class="form-control reply-content" rows="2" placeholder="Viết câu trả lời..." required></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm btn-reply" data-comment-id="${comment.commentId}">Gửi</button>
+                        <button type="button" class="btn btn-secondary btn-sm ms-2 cancel-reply" data-comment-id="${comment.commentId}">Hủy</button>
+                    </div>` : ''}
+                </div>
+            `;
+
+            if (parentId) {
+                const parentComment = document.querySelector(`[data-comment-id="${parentId}"]`);
+                if (parentComment) {
+                    parentComment.insertAdjacentHTML('afterend', newCommentHtml);
+                }
+            } else {
+                commentSection.insertAdjacentHTML('afterbegin', newCommentHtml);
+            }
+
+            attachReplyEvents();
+        }
+
+        // Gắn sự kiện cho các nút
+        function attachReplyEvents() {
+            document.querySelectorAll('.reply-link').forEach(link => {
+                link.removeEventListener('click', handleReplyLink);
+                link.addEventListener('click', handleReplyLink);
+            });
+
+            document.querySelectorAll('.btn-reply').forEach(button => {
+                button.removeEventListener('click', handleReplySubmit);
+                button.addEventListener('click', handleReplySubmit);
+            });
+
+            document.querySelectorAll('.cancel-reply').forEach(button => {
+                button.removeEventListener('click', handleCancelReply);
+                button.addEventListener('click', handleCancelReply);
+            });
+        }
+
+        function handleReplyLink(e) {
+            e.preventDefault();
+            const commentId = this.getAttribute('data-comment-id');
+            const replyForm = document.getElementById(`replyForm-${commentId}`);
+            replyForm.style.display = replyForm.style.display === 'block' ? 'none' : 'block';
+        }
+
+        async function handleReplySubmit() {
+            const commentId = this.getAttribute('data-comment-id');
+            const content = document.querySelector(`#replyForm-${commentId} .reply-content`).value.trim();
+
+            if (!content) {
+                alert('Vui lòng nhập nội dung trả lời!');
+                return;
+            }
+
+            try {
+                const response = await fetch('@Url.Action("AddReply", "Comment")', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest', 'RequestVerificationToken': token },
+                    body: JSON.stringify({ NewId: @Model.NewId, ParentId: parseInt(commentId), Content: content })
+                });
+
+                if (response.ok) {
+                    const reply = await response.json();
+                    addCommentToDOM(reply, commentId);
+                    document.querySelector(`#replyForm-${commentId} .reply-content`).value = '';
+                    document.getElementById(`replyForm-${commentId}`).style.display = 'none';
+                } else {
+                    alert('Lỗi khi gửi trả lời: ' + response.statusText);
+                }
+            } catch (error) {
+                alert('Lỗi kết nối: ' + error.message);
+            }
+        }
+
+        function handleCancelReply() {
+            const commentId = this.getAttribute('data-comment-id');
+            const replyForm = document.getElementById(`replyForm-${commentId}`);
+            replyForm.style.display = 'none';
+            replyForm.querySelector('.reply-content').value = '';
+        }
+
+        // Gắn sự kiện lần đầu
+        attachReplyEvents();
     </script>
 }

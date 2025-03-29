@@ -17,6 +17,7 @@ namespace WebTinTuc.Repositories
         {
             return await _context.News
                 .Include(n => n.User)
+                    .ThenInclude(u => u.Role) 
                 .ToListAsync();
         }
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebTinTuc.Models.Entities;
 using WebTinTuc.Repositories;
@@ -12,12 +13,14 @@ namespace WebTinTuc.Controllers
         private readonly INewsRepository _newsRepository;
         private readonly IWebHostEnvironment _environment;
         public readonly IUserRepository _userRepository;
+        public readonly ICategoryRepository _categoryRepository;
 
-        public NewsController(INewsRepository newsRepository, IWebHostEnvironment environment, IUserRepository userRepository)
+        public NewsController(INewsRepository newsRepository, IWebHostEnvironment environment, IUserRepository userRepository, ICategoryRepository categoryRepository)
         {
             _newsRepository = newsRepository;
             _environment = environment;
             _userRepository = userRepository;
+            _categoryRepository = categoryRepository;
         }
 
         // Action hiển thị trang chi tiết
@@ -35,8 +38,9 @@ namespace WebTinTuc.Controllers
 
         [Authorize]
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Categories = await _categoryRepository.GetAllAsync();
             return View();
         }
 
@@ -44,7 +48,7 @@ namespace WebTinTuc.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([FromForm] News news, IFormFile imageFile)
+        public async Task<IActionResult> Create([FromForm] News news, IFormFile imageFile, string categoryIds)
         {
             try
             {
@@ -66,6 +70,19 @@ namespace WebTinTuc.Controllers
                 news.Fk_UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("Không tìm thấy ID người dùng"));
                 news.ViewCount = 0;
                 news.IsApprove = await _userRepository.IsAdminAsync(news.Fk_UserId);
+
+                // Xử lý chuỗi categoryIds thành List<int>
+                List<int> categoryIdList = string.IsNullOrEmpty(categoryIds)
+                    ? new List<int>()
+                    : categoryIds.Split(',').Select(int.Parse).ToList();
+
+                // Thêm danh mục vào bài viết
+                if (categoryIds.Any())
+                {
+                    news.Categories = (await _categoryRepository.GetAllAsync())
+                        .Where(c => categoryIdList.Contains(c.CategoryId))
+                        .ToList();
+                }
 
                 await _newsRepository.AddAsync(news);
                 await _newsRepository.SaveChangesAsync();
@@ -165,6 +182,37 @@ namespace WebTinTuc.Controllers
             await _newsRepository.DeleteAsync(id);
             await _newsRepository.SaveChangesAsync();
             return Ok(); // Trả về 200 OK cho AJAX
+        }
+
+
+        // dành cho admin
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ApprovePosts()
+        {
+            // Lấy danh sách bài viết chưa duyệt của user (không phải admin)
+            var allPosts = await _newsRepository.GetAll();
+
+            // Áp dụng LINQ sau khi await
+            var posts = allPosts
+                .Where(n => !n.IsApprove && n.User.Role.RoleId != 1) // 1 là admin
+                .ToList(); // Chuyển thành List
+            return View(posts);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Approve(int id)
+        {
+            var news = await _newsRepository.GetById(id);
+            if (news == null)
+            {
+                return NotFound();
+            }
+            news.IsApprove = true;
+            await _newsRepository.UpdateAsync(news);
+            await _newsRepository.SaveChangesAsync();
+            return Ok();
         }
 
     }
