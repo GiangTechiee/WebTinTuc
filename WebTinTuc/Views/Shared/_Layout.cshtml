@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebNC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
     <style>
@@ -59,7 +60,7 @@
                                     @if (User.IsInRole("Admin"))
                                     {
                                         <li><a class="dropdown-item" asp-controller="News" asp-action="ApprovePosts">Duyệt bài</a></li>
-                                        <li><a class="dropdown-item" asp-controller="" asp-action="">Quản lý danh mục</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Category" asp-action="Index">Quản lý danh mục</a></li>
                                         <li><a class="dropdown-item" asp-controller="CommentManagement" asp-action="Index">Quản lý bình luận</a></li>
                                     }
                                 </ul>
@@ -98,7 +99,7 @@
                                     <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Tài khoản của tôi</a></li>
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li><a class="dropdown-item" asp-controller="" asp-action="">Quản lý người dùng</a></li>
+                                        <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Quản lý người dùng</a></li>
                                     }
                                     <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Đăng xuất</a></li>
                                 </ul>

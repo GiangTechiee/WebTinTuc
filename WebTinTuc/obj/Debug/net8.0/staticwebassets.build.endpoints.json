@@ -659,6 +659,88 @@
       ]
     },
     {
+      "Route": "images/frontend-react_1.jpg",
+      "AssetFile": "images/frontend-react_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 07:17:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w="
+        }
+      ]
+    },
+    {
+      "Route": "images/frontend-react_1.sx65cws5at.jpg",
+      "AssetFile": "images/frontend-react_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 07:17:10 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sx65cws5at"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w="
+        },
+        {
+          "Name": "label",
+          "Value": "images/frontend-react_1.jpg"
+        }
+      ]
+    },
+    {
       "Route": "images/new1.e7wby9jcab.jpg",
       "AssetFile": "images/new1.jpg",
       "Selectors": [],

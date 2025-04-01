@@ -5,6 +5,7 @@ wwwroot\images\data-engineer.jpeg
 wwwroot\images\data-engineer_1.jpeg
 wwwroot\images\default-avatar.jpg
 wwwroot\images\frontend-react.jpg
+wwwroot\images\frontend-react_1.jpg
 wwwroot\images\new1.jpg
 wwwroot\images\new1_1.jpg
 wwwroot\images\thong-nhat-blade-xanh.jpg

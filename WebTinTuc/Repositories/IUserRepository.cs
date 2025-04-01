@@ -13,5 +13,8 @@ namespace WebTinTuc.Repositories
         Task DeleteUserAsync(int userId, int defaultUserId);
         Task<IDbContextTransaction> BeginTransactionAsync();
         Task<bool> IsAdminAsync(int userId);
+
+        Task<IEnumerable<User>> GetAllUsersAsync();
+        Task<User> GetByIdAsync(int userId);
     }
 }

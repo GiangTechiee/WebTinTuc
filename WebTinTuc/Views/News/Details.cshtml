@@ -23,6 +23,16 @@
     .reply-form {
         display: none; /* Ẩn form trả lời mặc định */
     }
+
+    .favorite-btn {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .favorite-btn.favorited {
+        color: red;
+    }
 </style>
 
 <div class="container mt-4">
@@ -33,10 +43,18 @@
                 <img src="@Model.FullImagePath" class="card-img-top" alt="@Model.Title">
                 <div class="card-body">
                     <h1 class="card-title fw-bold">@Model.Title</h1>
+
                     <p class="text-muted mb-2">
                         <strong>Người đăng:</strong> @Model.User.FullName
                         <small class="ms-2 text-secondary">
                             · @Model.PostedDate.ToString("dd/MM/yyyy HH:mm") · @Model.ViewCount lượt xem
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <span class="favorite-btn ms-2 @(ViewBag.IsFavorited ? "favorited" : "")" data-news-id="@Model.NewId" title="@(ViewBag.IsFavorited ? "Xóa khỏi yêu thích" : "Thêm vào yêu thích")">
+                                    <i class="fa@(ViewBag.IsFavorited ? "s" : "r") fa-heart"></i>
+                                </span>
+                            }
                         </small>
                     </p>
                     <p class="text-muted">@Model.Abstract</p>
@@ -342,5 +360,46 @@
 
         // Gắn sự kiện lần đầu
         attachReplyEvents();
+
+                // Xử lý sự kiện click nút yêu thích
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', async function () {
+                const newsId = this.getAttribute('data-news-id');
+                const isFavorited = this.classList.contains('favorited');
+
+                try {
+                    const response = await fetch('/api/Favorite/toggle', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'RequestVerificationToken': token
+                        },
+                        body: JSON.stringify({ NewsId: parseInt(newsId) })
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        if (result.success) {
+                            if (result.isFavorited) {
+                                this.classList.add('favorited');
+                                this.innerHTML = '<i class="fas fa-heart"></i>';
+                                this.title = 'Xóa khỏi yêu thích';
+                            } else {
+                                this.classList.remove('favorited');
+                                this.innerHTML = '<i class="far fa-heart"></i>';
+                                this.title = 'Thêm vào yêu thích';
+                            }
+                        } else {
+                            alert(result.message);
+                        }
+                    } else {
+                        alert('Lỗi khi xử lý yêu thích: ' + response.statusText);
+                    }
+                } catch (error) {
+                    alert('Lỗi kết nối: ' + error.message);
+                }
+            });
+        });
     </script>
 }

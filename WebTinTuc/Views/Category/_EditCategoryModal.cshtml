@@ -1,0 +1,28 @@
+﻿@model WebTinTuc.Models.Entities.Category
+
+<div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCategoryModalLabel">Sửa danh mục</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editCategoryForm" onsubmit="submitForm(event, 'editCategoryForm', '@Url.Action("Edit", "Category", new { id = Model.CategoryId })', 'Cập nhật thành công')">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+                    <div class="mb-3">
+                        <label for="categoryName" class="form-label">Tên danh mục</label>
+                        <input type="text" class="form-control" id="categoryName" name="CategoryName" value="@Model.CategoryName" required maxlength="50">
+                        @Html.ValidationMessageFor(m => m.CategoryName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Mô tả</label>
+                        <textarea class="form-control" id="description" name="Description" rows="3">@Model.Description</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Cập nhật</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,13 +14,16 @@ namespace WebTinTuc.Controllers
         private readonly IWebHostEnvironment _environment;
         public readonly IUserRepository _userRepository;
         public readonly ICategoryRepository _categoryRepository;
+        public readonly IFavoriteRepository _favoriteRepository;
 
-        public NewsController(INewsRepository newsRepository, IWebHostEnvironment environment, IUserRepository userRepository, ICategoryRepository categoryRepository)
+        public NewsController(INewsRepository newsRepository, IWebHostEnvironment environment, 
+            IUserRepository userRepository, ICategoryRepository categoryRepository, IFavoriteRepository favoriteRepository)
         {
             _newsRepository = newsRepository;
             _environment = environment;
             _userRepository = userRepository;
             _categoryRepository = categoryRepository;
+            _favoriteRepository = favoriteRepository;
         }
 
         // Action hiển thị trang chi tiết
@@ -32,6 +35,26 @@ namespace WebTinTuc.Controllers
             {
                 return NotFound();
             }
+            string sessionKey = $"ViewedNews_{id}";
+            if (HttpContext.Session.GetString(sessionKey) == null)
+            {
+                news.ViewCount++;
+                await _newsRepository.UpdateAsync(news);
+                await _newsRepository.SaveChangesAsync();
+
+                // Đánh dấu bài viết đã được xem trong session
+                HttpContext.Session.SetString(sessionKey, "true");
+            }
+
+            // Kiểm tra trạng thái yêu thích nếu người dùng đã đăng nhập
+            bool isFavorited = false;
+            if (User.Identity.IsAuthenticated)
+            {
+                int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                isFavorited = await _favoriteRepository.IsFavoriteAsync(userId, id);
+            }
+
+            ViewBag.IsFavorited = isFavorited;
             return View(news);
         }
 
@@ -115,6 +138,18 @@ namespace WebTinTuc.Controllers
             {
                 return NotFound();
             }
+            // Kiểm tra xem bài viết đã được xem trong session này chưa
+            string sessionKey = $"ViewedNews_{id}";
+            if (HttpContext.Session.GetString(sessionKey) == null)
+            {
+                news.ViewCount++;
+                await _newsRepository.UpdateAsync(news);
+                await _newsRepository.SaveChangesAsync();
+
+                // Đánh dấu bài viết đã được xem trong session
+                HttpContext.Session.SetString(sessionKey, "true");
+            }
+
             return View(news);
         }
 

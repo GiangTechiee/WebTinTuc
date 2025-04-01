@@ -91,6 +91,19 @@ namespace WebTinTuc.Repositories
 
         public async Task Update(User user)
         {
+            var existingUser = await _context.Users.AsNoTracking()
+                .FirstOrDefaultAsync(u => u.UserId == user.UserId);
+            if (existingUser == null)
+                throw new Exception("Không tìm thấy người dùng.");
+
+            // Kiểm tra trùng lặp Email (ngoại trừ chính user hiện tại)
+            if (await _context.Users.AnyAsync(u => u.Email == user.Email && u.UserId != user.UserId))
+                throw new Exception("Email đã tồn tại");
+
+            // Kiểm tra trùng lặp PhoneNumber (ngoại trừ chính user hiện tại)
+            if (await _context.Users.AnyAsync(u => u.PhoneNumber == user.PhoneNumber && u.UserId != user.UserId))
+                throw new Exception("Số điện thoại đã tồn tại");
+
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
@@ -139,6 +152,20 @@ namespace WebTinTuc.Repositories
                 .FirstOrDefaultAsync(u => u.UserId == userId);
 
             return user != null && user.Role != null && user.Role.RoleId == 1; // 1 là role của admin
+        }
+
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        {
+            return await _context.Users
+                .Include(u => u.Role)
+                .ToListAsync();
+        }
+
+        public async Task<User> GetByIdAsync(int userId)
+        {
+            return await _context.Users
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(u => u.UserId == userId);
         }
     }
 }

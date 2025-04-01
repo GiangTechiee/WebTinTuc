@@ -48,6 +48,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/Category/_CreateCategoryModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0NyZWF0ZUNhdGVnb3J5TW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/Category/_DeleteCategoryModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0RlbGV0ZUNhdGVnb3J5TW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/Category/_EditCategoryModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0VkaXRDYXRlZ29yeU1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/CommentManagement/Comments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudE1hbmFnZW1lbnRcQ29tbWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -94,6 +110,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/BTL_WebNC/WebTinTuc/WebTinTuc/Views/_ViewImports.cshtml]

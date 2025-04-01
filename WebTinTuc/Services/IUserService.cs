@@ -7,8 +7,13 @@ namespace WebTinTuc.Services
     {
         Task<User> Register(UserRegisterDto userDto);
         Task<User> Login(UserLoginDto userDto);
-        Task<int> GetOrCreateDefaultUserId(); // Lấy hoặc tạo user mặc định
+        Task<int> GetDefaultUserId(); 
         Task DeleteUserAsync(int userId);
         Task ConfirmEmail(string token);
+
+        Task<IEnumerable<User>> GetAllUsersAsync();
+        Task<User> CreateUserAsync(UserRegisterDto userDto); 
+        Task UpdateUserAsync(int userId, UserUpdateDto userDto);
+        Task<User> GetByIdAsync(int userId);
     }
 }

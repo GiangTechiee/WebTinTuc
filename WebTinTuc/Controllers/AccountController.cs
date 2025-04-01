@@ -38,6 +38,7 @@ namespace WebTinTuc.Controllers
                     PhoneNumber = user.PhoneNumber,
                     FullName = user.FullName,
                     Avatar = user.Avatar,
+                    Address = user.Address,
                     Message = "Đăng ký thành công! Vui lòng kiểm tra email."
                 });
             }
@@ -112,6 +113,7 @@ namespace WebTinTuc.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
 
@@ -131,11 +133,6 @@ namespace WebTinTuc.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
-        [HttpGet("AdminDashboard")]
-        public IActionResult AdminDashboard()
-        {
-            return View();
-        }
+        
     }
 }

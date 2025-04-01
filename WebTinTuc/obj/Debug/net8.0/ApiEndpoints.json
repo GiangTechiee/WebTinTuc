@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "WebTinTuc.Controllers.FavoriteController",
+    "Method": "ToggleFavorite",
+    "RelativePath": "api/Favorite/toggle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebTinTuc.Models.DTOs.FavoriteToggleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

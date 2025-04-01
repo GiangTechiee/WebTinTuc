@@ -1,0 +1,27 @@
+﻿@model WebTinTuc.Models.Entities.Category
+
+<div class="modal fade" id="createCategoryModal" tabindex="-1" aria-labelledby="createCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createCategoryModalLabel">Thêm danh mục</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="createCategoryForm" onsubmit="submitForm(event, 'createCategoryForm', '@Url.Action("Create", "Category")', 'Thêm thành công')">
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label for="categoryName" class="form-label">Tên danh mục</label>
+                        <input type="text" class="form-control" id="categoryName" name="CategoryName" value="@Model.CategoryName" required maxlength="50">
+                        @Html.ValidationMessageFor(m => m.CategoryName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Mô tả</label>
+                        <textarea class="form-control" id="description" name="Description" rows="3">@Model.Description</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Thêm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
