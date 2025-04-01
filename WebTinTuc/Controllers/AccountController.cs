@@ -125,14 +125,67 @@ namespace WebTinTuc.Controllers
 
         [Authorize]
         [HttpGet("Profile")]
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile()
         {
-            ViewBag.FullName = User.Identity.Name;
-            ViewBag.Role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
-            ViewBag.Avatar = User.Claims.FirstOrDefault(c => c.Type == "Avatar")?.Value;
+            int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var user = await _userService.GetByIdAsync(userId);
+
+            ViewBag.FullName = user.FullName;
+            ViewBag.Role = user.Role?.RoleName ?? "User";
+            ViewBag.Avatar = user.FullAvatarPath;
+            ViewBag.Email = user.Email;
+            ViewBag.PhoneNumber = user.PhoneNumber;
+            ViewBag.DateOfBirth = user.DateOfBirth?.ToString("dd/MM/yyyy");
+            ViewBag.Address = user.Address;
+            ViewBag.CreatedAt = user.CreatedAt.ToString("dd/MM/yyyy HH:mm");
+
             return View();
         }
 
-        
+        [Authorize]
+        [HttpPost("UpdateProfile")]
+        public async Task<IActionResult> UpdateProfile([FromForm] UserUpdateDto userDto, IFormFile avatar)
+        {
+            try
+            {
+                int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                var user = await _userService.GetByIdAsync(userId);
+
+                // Xử lý upload ảnh đại diện nếu có
+                if (avatar != null && avatar.Length > 0)
+                {
+                    string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + avatar.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await avatar.CopyToAsync(fileStream);
+                    }
+                    userDto.Avatar = uniqueFileName; // Cập nhật đường dẫn ảnh mới
+                }
+
+                // Cập nhật thông tin người dùng
+                await _userService.UpdateUserAsync(userId, userDto);
+
+                // Cập nhật Claims nếu cần (FullName, Avatar)
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+                    new Claim(ClaimTypes.Name, userDto.FullName ?? user.FullName),
+                    new Claim(ClaimTypes.Role, user.Role?.RoleName ?? "User"),
+                    new Claim("Avatar", userDto.Avatar != null ? $"/images/{userDto.Avatar}" : user.FullAvatarPath)
+                };
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                return Ok(new { message = "Cập nhật thông tin thành công!" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gjDu37afBunw73eR//iS7fQevGQ295t75eioilMjmdQ=",
+  "Hash": "ZCfnHwFkU1fjmTIvN0De6dRo7sKWiT8Q6lfjRi2sbfk=",
   "Source": "WebTinTuc",
   "BasePath": "_content/WebTinTuc",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/55c7ef60-6586-42b8-8a64-977805778216_avatar#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4zsucm4wzk",
+      "Integrity": "0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg"
     },
     {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev.jpg",
@@ -1670,6 +1691,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/55c7ef60-6586-42b8-8a64-977805778216_avatar.4zsucm4wzk.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 14:16:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4zsucm4wzk"
+        },
+        {
+          "Name": "label",
+          "Value": "images/55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
+        }
+      ]
+    },
+    {
+      "Route": "images/55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 14:16:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
         }
       ]
     },

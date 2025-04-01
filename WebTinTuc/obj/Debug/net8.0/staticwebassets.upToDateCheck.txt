@@ -1,5 +1,6 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg
 wwwroot\images\backend-dev.jpg
 wwwroot\images\data-engineer.jpeg
 wwwroot\images\data-engineer_1.jpeg
