@@ -1,0 +1,49 @@
+﻿@model List<WebTinTuc.Models.Entities.News>
+
+@{
+    ViewData["Title"] = "Kết quả tìm kiếm - WebNC";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Kết quả tìm kiếm cho: "@ViewBag.Query"</h1>
+
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <div class="alert alert-info" role="alert">
+            @ViewBag.Message
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var news in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        @if (!string.IsNullOrEmpty(news.Image))
+                        {
+                            <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="text-decoration-none">
+                                <img src="@news.FullImagePath" class="card-img-top" alt="@news.Title" style="height: 200px; object-fit: cover;" />
+                            </a>
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="@Url.Action("Details", "News", new { id = news.NewId })" class="text-dark text-decoration-none">
+                                    @news.Title
+                                </a>
+                            </h5>
+                            <p class="card-text">@news.Abstract</p>
+                            <p class="text-muted">
+                                <small>Đăng bởi: @news.User?.FullName | @news.PostedDate.ToString("dd/MM/yyyy")</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    <div class="text-center mt-4">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Quay lại trang chủ</a>
+    </div>
+</div>

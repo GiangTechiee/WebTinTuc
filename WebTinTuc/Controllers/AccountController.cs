@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using WebTinTuc.Models.DTOs;
 using WebTinTuc.Services;
+using System.Globalization;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebTinTuc.Controllers
 {
@@ -13,10 +15,12 @@ namespace WebTinTuc.Controllers
     public class AccountController : Controller
     {
         private readonly IUserService _userService;
+        private readonly IWebHostEnvironment _environment;
 
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, IWebHostEnvironment environment)
         {
             _userService = userService;
+            _environment = environment;
         }
 
         [HttpGet("Register")]
@@ -135,7 +139,9 @@ namespace WebTinTuc.Controllers
             ViewBag.Avatar = user.FullAvatarPath;
             ViewBag.Email = user.Email;
             ViewBag.PhoneNumber = user.PhoneNumber;
-            ViewBag.DateOfBirth = user.DateOfBirth?.ToString("dd/MM/yyyy");
+            ViewBag.DateOfBirth = user.DateOfBirth.HasValue
+                ? user.DateOfBirth.Value.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture)
+                : null;
             ViewBag.Address = user.Address;
             ViewBag.CreatedAt = user.CreatedAt.ToString("dd/MM/yyyy HH:mm");
 
@@ -151,17 +157,20 @@ namespace WebTinTuc.Controllers
                 int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 var user = await _userService.GetByIdAsync(userId);
 
-                // Xử lý upload ảnh đại diện nếu có
+                // Xử lý upload ảnh đại diện
                 if (avatar != null && avatar.Length > 0)
                 {
-                    string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
-                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + avatar.FileName;
-                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    string uniqueFileName = ImageUtil.SaveImage(avatar, _environment);
+                    if (!string.IsNullOrEmpty(uniqueFileName))
                     {
-                        await avatar.CopyToAsync(fileStream);
+                        userDto.Avatar = uniqueFileName; // Cập nhật đường dẫn ảnh mới
                     }
-                    userDto.Avatar = uniqueFileName; // Cập nhật đường dẫn ảnh mới
+                }
+
+                if (userDto.DateOfBirth.HasValue)
+                {
+                    // Giá trị đã là DateTime, có thể dùng trực tiếp
+                    Console.WriteLine($"DateOfBirth from form: {userDto.DateOfBirth.Value}");
                 }
 
                 // Cập nhật thông tin người dùng

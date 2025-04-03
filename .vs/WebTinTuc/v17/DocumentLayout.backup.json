@@ -3,48 +3,44 @@
   "WorkspaceRootPath": "D:\\BTL_WebNC\\WebTinTuc\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\search\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\search\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\dtos\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\dtos\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\controllers\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\controllers\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\entities\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\entities\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\services\\imageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\services\\imageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\news\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\news\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\dtos\\favoritetogglerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\dtos\\favoritetogglerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\favoriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\favoriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\ifavoriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\ifavoriterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\entities\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\entities\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\dtos\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\dtos\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,145 +58,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebTinTuc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebTinTuc\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAuwEYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-01T14:08:02.382Z",
+              "WhenOpened": "2025-04-03T06:30:43.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserUpdateDto.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
-              "RelativeToolTip": "WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T14:07:34.764Z",
+              "DocumentIndex": 0,
+              "Title": "Results.cshtml",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Search\\Results.cshtml",
+              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Search\\Results.cshtml",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Search\\Results.cshtml*",
+              "RelativeToolTip": "WebTinTuc\\Views\\Search\\Results.cshtml*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwDAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T06:27:18.39Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Profile.cshtml",
-              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Account\\Profile.cshtml",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Profile.cshtml*",
-              "RelativeToolTip": "WebTinTuc\\Views\\Account\\Profile.cshtml*",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAAAHsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-01T14:05:55.413Z",
+              "Title": "SearchController.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\SearchController.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\SearchController.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\SearchController.cs",
+              "RelativeToolTip": "WebTinTuc\\Controllers\\SearchController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwB4AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T06:24:58.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\News\\Details.cshtml",
-              "RelativeDocumentMoniker": "WebTinTuc\\Views\\News\\Details.cshtml",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\News\\Details.cshtml",
-              "RelativeToolTip": "WebTinTuc\\Views\\News\\Details.cshtml",
-              "ViewState": "AgIAACgAAAAAAAAAAAAkwDsAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-01T11:12:54.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NewsController.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\NewsController.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\NewsController.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\NewsController.cs",
-              "RelativeToolTip": "WebTinTuc\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAA1wB0AAAARAAAAAAAAAA==",
+              "Title": "News.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\News.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Models\\Entities\\News.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\News.cs",
+              "RelativeToolTip": "WebTinTuc\\Models\\Entities\\News.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:24:14.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FavoriteController.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\FavoriteController.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\FavoriteController.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\FavoriteController.cs",
-              "RelativeToolTip": "WebTinTuc\\Controllers\\FavoriteController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAEwBYAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T11:26:04.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Favorite.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\Favorite.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Models\\Entities\\Favorite.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\Favorite.cs",
-              "RelativeToolTip": "WebTinTuc\\Models\\Entities\\Favorite.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:25:52.96Z",
+              "WhenOpened": "2025-04-03T06:22:55.165Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\AccountController.cs*",
-              "RelativeToolTip": "WebTinTuc\\Controllers\\AccountController.cs*",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAAALAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:11:45.372Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebTinTuc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAuwHEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T06:22:08.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FavoriteRepository.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\FavoriteRepository.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Repositories\\FavoriteRepository.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\FavoriteRepository.cs",
-              "RelativeToolTip": "WebTinTuc\\Repositories\\FavoriteRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAiwB0AAAAYAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Services\\UserService.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Services\\UserService.cs",
+              "RelativeToolTip": "WebTinTuc\\Services\\UserService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:27:35.874Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FavoriteToggleRequest.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\FavoriteToggleRequest.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Models\\DTOs\\FavoriteToggleRequest.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\FavoriteToggleRequest.cs",
-              "RelativeToolTip": "WebTinTuc\\Models\\DTOs\\FavoriteToggleRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:45:10.435Z",
+              "WhenOpened": "2025-04-03T06:17:01.23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "IFavoriteRepository.cs",
-              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\IFavoriteRepository.cs",
-              "RelativeDocumentMoniker": "WebTinTuc\\Repositories\\IFavoriteRepository.cs",
-              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\IFavoriteRepository.cs",
-              "RelativeToolTip": "WebTinTuc\\Repositories\\IFavoriteRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Title": "UserUpdateDto.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
+              "RelativeToolTip": "WebTinTuc\\Models\\DTOs\\UserUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T11:22:04.008Z",
+              "WhenOpened": "2025-04-02T13:12:06.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ImageUtil.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Services\\ImageUtil.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Services\\ImageUtil.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Services\\ImageUtil.cs",
+              "RelativeToolTip": "WebTinTuc\\Services\\ImageUtil.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T12:42:45.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "WebTinTuc\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "WebTinTuc\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAuwHwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T12:41:30.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebTinTuc\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebTinTuc\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAwLAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T12:38:22.067Z",
               "EditorCaption": ""
             }
           ]

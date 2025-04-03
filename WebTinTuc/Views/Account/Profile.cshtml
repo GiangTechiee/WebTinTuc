@@ -1,7 +1,9 @@
-﻿@* Views/Account/Profile.cshtml *@
+﻿@using System.Globalization
+@* Views/Account/Profile.cshtml *@
 @{
     ViewData["Title"] = "Tài khoản của tôi - WebNC";
 }
+
 
 <div class="container mt-5">
     <h1 class="text-center mb-4">Tài khoản của tôi</h1>
@@ -83,7 +85,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="dateOfBirth" class="form-label">Ngày sinh</label>
-                            <input type="date" class="form-control" id="dateOfBirth" name="DateOfBirth" value="@(ViewBag.DateOfBirth != null ? DateTime.Parse(ViewBag.DateOfBirth).ToString("yyyy-MM-dd") : "")" />
+                            <input type="date" class="form-control" id="dateOfBirth" name="DateOfBirth"
+                                   value="@(ViewBag.DateOfBirth != null ? DateTime.ParseExact(ViewBag.DateOfBirth, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd") : "")" />
                         </div>
                         <div class="col-12 mb-3">
                             <label for="address" class="form-label">Địa chỉ</label>
