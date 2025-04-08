@@ -26,6 +26,22 @@ namespace WebTinTuc.Controllers
             _favoriteRepository = favoriteRepository;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetLatestNews(int skip = 0, int take = 6)
+        {
+            var newsList = await _newsRepository.GetAll(); // Lấy toàn bộ tin
+            var filteredNews = newsList.Skip(skip).Take(take).Select(n => new
+            {
+                newId = n.NewId,
+                title = n.Title,
+                @abstract = n.Abstract,
+                fullImagePath = n.FullImagePath,
+                postedDate = n.PostedDate,
+                viewCount = n.ViewCount
+            });
+            return Ok(filteredNews);
+        }
+
         // Action hiển thị trang chi tiết
         [HttpGet]
         public async Task<IActionResult> Details(int id)

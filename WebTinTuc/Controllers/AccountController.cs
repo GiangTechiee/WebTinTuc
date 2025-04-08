@@ -24,14 +24,25 @@ namespace WebTinTuc.Controllers
         }
 
         [HttpGet("Register")]
+        [AllowAnonymous]
         public IActionResult Register()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
         [HttpPost("register")]
+        [AllowAnonymous]
         public async Task<IActionResult> Register([FromBody] UserRegisterDto userDto)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return Ok(new { message = "Bạn đã đăng nhập, không thể đăng ký thêm tài khoản." });
+            }
+
             try
             {
                 var user = await _userService.Register(userDto);
@@ -53,13 +64,19 @@ namespace WebTinTuc.Controllers
         }
 
         [HttpGet("Login")]
+        [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home"); 
+            }
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
         [HttpPost("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] UserLoginDto userDto)
         {
             try
@@ -100,6 +117,7 @@ namespace WebTinTuc.Controllers
         }
 
         [HttpGet("confirm-email")]
+        [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail(string token)
         {
             try
@@ -122,6 +140,7 @@ namespace WebTinTuc.Controllers
         }
 
         [HttpGet("AccessDenied")]
+        [AllowAnonymous]
         public IActionResult AccessDenied()
         {
             return View();

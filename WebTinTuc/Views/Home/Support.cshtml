@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Hỗ trợ";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Hỗ trợ</h1>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <!-- Phần Giới thiệu -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 mb-3">Chào mừng đến với Trung tâm Hỗ trợ WebNC</h2>
+                    <p class="text-muted">
+                        Chúng tôi ở đây để giúp bạn giải đáp mọi thắc mắc và tận hưởng trải nghiệm tốt nhất trên WebNC. Bạn có thể tìm câu trả lời trong phần FAQ, gửi yêu cầu hỗ trợ qua biểu mẫu, hoặc liên hệ trực tiếp với chúng tôi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Phần FAQ -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 mb-3">Câu hỏi thường gặp (FAQ)</h2>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    Làm thế nào để đăng ký tài khoản trên WebNC?
+                                </button>
+                            </h3>
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Để đăng ký tài khoản, nhấp vào nút "Đăng ký" ở góc trên bên phải, điền thông tin cần thiết (tên, email, mật khẩu), và làm theo hướng dẫn để xác nhận email của bạn.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    Tôi quên mật khẩu, phải làm sao?
+                                </button>
+                            </h3>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Nhấp vào "Đăng nhập" và chọn "Quên mật khẩu". Nhập email của bạn, và chúng tôi sẽ gửi hướng dẫn để đặt lại mật khẩu.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    Làm thế nào để đăng bài viết trên WebNC?
+                                </button>
+                            </h3>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sau khi đăng nhập, vào mục "Quản lý bài viết" và chọn "Đăng bài". Điền tiêu đề, nội dung, danh mục, và gửi bài để được duyệt.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phần Biểu mẫu Liên hệ -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="h4 mb-3">Gửi yêu cầu hỗ trợ</h2>
+                    <p class="text-muted mb-4">Nếu bạn không tìm thấy câu trả lời trong FAQ, hãy gửi yêu cầu cho chúng tôi. Đội ngũ hỗ trợ sẽ phản hồi trong vòng 24 giờ.</p>
+                    <form asp-controller="Support" asp-action="Submit" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Chủ đề</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Nội dung</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

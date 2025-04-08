@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RU57BwcQNp/3m2Y/WYjoZnliQZQKdJnGN5bT+xXcGSE=",
+  "Hash": "ahtc0diHgQlUSM5XAUwW24KluQ1iFBpzFnqxYMvHzVo=",
   "Source": "WebTinTuc",
   "BasePath": "_content/WebTinTuc",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "2mev84hq8w",
+      "Integrity": "RnyXd1NGr5fET63IM1j7NbdimnXrcOjqQqU6QJ1ApQ4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -122,6 +122,48 @@
       "OriginalItemSpec": "wwwroot\\images\\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg"
     },
     {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/avatar#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4zsucm4wzk",
+      "Integrity": "0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\avatar.jpg"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar_1.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/avatar_1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4zsucm4wzk",
+      "Integrity": "0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\avatar_1.jpg"
+    },
+    {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev.jpg",
       "SourceId": "WebTinTuc",
       "SourceType": "Discovered",
@@ -141,6 +183,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\backend-dev.jpg"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev_1.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/backend-dev_1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jaojsqtbk1",
+      "Integrity": "u9VpcqGeCMM5zqYAl5kWDiKcHBuhmKGrefJ2RejYWJs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\backend-dev_1.jpg"
     },
     {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer.jpeg",
@@ -185,6 +248,48 @@
       "OriginalItemSpec": "wwwroot\\images\\data-engineer_1.jpeg"
     },
     {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_2.jpeg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/data-engineer_2#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3jpjpatwlw",
+      "Integrity": "//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\data-engineer_2.jpeg"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_3.jpeg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/data-engineer_3#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3jpjpatwlw",
+      "Integrity": "//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\data-engineer_3.jpeg"
+    },
+    {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar.jpg",
       "SourceId": "WebTinTuc",
       "SourceType": "Discovered",
@@ -204,6 +309,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\default-avatar.jpg"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar_1.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/default-avatar_1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tzn1a5gz8h",
+      "Integrity": "uW12iTTOFW4hjOyZIiz+AZdrWnQDiM1YJoJe/IeXB9s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\default-avatar_1.jpg"
     },
     {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react.jpg",
@@ -269,6 +395,27 @@
       "OriginalItemSpec": "wwwroot\\images\\frontend-react_2.jpg"
     },
     {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react_3.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/frontend-react_3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sx65cws5at",
+      "Integrity": "YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\frontend-react_3.jpg"
+    },
+    {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1.jpg",
       "SourceId": "WebTinTuc",
       "SourceType": "Discovered",
@@ -311,6 +458,48 @@
       "OriginalItemSpec": "wwwroot\\images\\new1_1.jpg"
     },
     {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_2.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/new1_2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e7wby9jcab",
+      "Integrity": "ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\new1_2.jpg"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_3.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/new1_3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e7wby9jcab",
+      "Integrity": "ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\new1_3.jpg"
+    },
+    {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh.jpg",
       "SourceId": "WebTinTuc",
       "SourceType": "Discovered",
@@ -330,6 +519,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\thong-nhat-blade-xanh.jpg"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh_1.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/thong-nhat-blade-xanh_1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5j82eaney6",
+      "Integrity": "sb3unp2wOh4lj0xEC4sRGHNBbud+u73crmdbE8oU5Ts=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\thong-nhat-blade-xanh_1.jpg"
     },
     {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\js\\site.js",
@@ -1552,7 +1762,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
+      "Route": "css/site.2mev84hq8w.css",
       "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1562,7 +1772,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "1019"
         },
         {
           "Name": "Content-Type",
@@ -1570,11 +1780,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"RnyXd1NGr5fET63IM1j7NbdimnXrcOjqQqU6QJ1ApQ4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 18 Mar 2025 10:02:23 GMT"
+          "Value": "Tue, 08 Apr 2025 06:12:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1584,7 +1794,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
+          "Value": "2mev84hq8w"
         },
         {
           "Name": "label",
@@ -1592,7 +1802,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-RnyXd1NGr5fET63IM1j7NbdimnXrcOjqQqU6QJ1ApQ4="
         }
       ]
     },
@@ -1607,7 +1817,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "1019"
         },
         {
           "Name": "Content-Type",
@@ -1615,11 +1825,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"RnyXd1NGr5fET63IM1j7NbdimnXrcOjqQqU6QJ1ApQ4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 18 Mar 2025 10:02:23 GMT"
+          "Value": "Tue, 08 Apr 2025 06:12:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1629,7 +1839,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-RnyXd1NGr5fET63IM1j7NbdimnXrcOjqQqU6QJ1ApQ4="
         }
       ]
     },
@@ -1798,6 +2008,170 @@
       ]
     },
     {
+      "Route": "images/avatar.4zsucm4wzk.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 06:31:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4zsucm4wzk"
+        },
+        {
+          "Name": "label",
+          "Value": "images/avatar.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
+        }
+      ]
+    },
+    {
+      "Route": "images/avatar.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 06:31:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
+        }
+      ]
+    },
+    {
+      "Route": "images/avatar_1.4zsucm4wzk.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 01:31:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4zsucm4wzk"
+        },
+        {
+          "Name": "label",
+          "Value": "images/avatar_1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
+        }
+      ]
+    },
+    {
+      "Route": "images/avatar_1.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 01:31:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
+        }
+      ]
+    },
+    {
       "Route": "images/backend-dev.jaojsqtbk1.jpg",
       "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev.jpg",
       "Selectors": [],
@@ -1866,6 +2240,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 28 Mar 2025 07:40:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u9VpcqGeCMM5zqYAl5kWDiKcHBuhmKGrefJ2RejYWJs="
+        }
+      ]
+    },
+    {
+      "Route": "images/backend-dev_1.jaojsqtbk1.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "75578"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u9VpcqGeCMM5zqYAl5kWDiKcHBuhmKGrefJ2RejYWJs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:29:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jaojsqtbk1"
+        },
+        {
+          "Name": "label",
+          "Value": "images/backend-dev_1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-u9VpcqGeCMM5zqYAl5kWDiKcHBuhmKGrefJ2RejYWJs="
+        }
+      ]
+    },
+    {
+      "Route": "images/backend-dev_1.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "75578"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u9VpcqGeCMM5zqYAl5kWDiKcHBuhmKGrefJ2RejYWJs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:29:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2044,6 +2500,170 @@
       ]
     },
     {
+      "Route": "images/data-engineer_2.3jpjpatwlw.jpeg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68781"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:29:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3jpjpatwlw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/data-engineer_2.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU="
+        }
+      ]
+    },
+    {
+      "Route": "images/data-engineer_2.jpeg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68781"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:29:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU="
+        }
+      ]
+    },
+    {
+      "Route": "images/data-engineer_3.3jpjpatwlw.jpeg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_3.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68781"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:30:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3jpjpatwlw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/data-engineer_3.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU="
+        }
+      ]
+    },
+    {
+      "Route": "images/data-engineer_3.jpeg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_3.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68781"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:30:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-//i6W51E1BgEzve3CMSAfxHiryjSAeSNpfdj6wTxnJU="
+        }
+      ]
+    },
+    {
       "Route": "images/default-avatar.jpg",
       "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar.jpg",
       "Selectors": [],
@@ -2118,6 +2738,88 @@
         {
           "Name": "label",
           "Value": "images/default-avatar.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uW12iTTOFW4hjOyZIiz+AZdrWnQDiM1YJoJe/IeXB9s="
+        }
+      ]
+    },
+    {
+      "Route": "images/default-avatar_1.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uW12iTTOFW4hjOyZIiz+AZdrWnQDiM1YJoJe/IeXB9s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 01:24:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uW12iTTOFW4hjOyZIiz+AZdrWnQDiM1YJoJe/IeXB9s="
+        }
+      ]
+    },
+    {
+      "Route": "images/default-avatar_1.tzn1a5gz8h.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uW12iTTOFW4hjOyZIiz+AZdrWnQDiM1YJoJe/IeXB9s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 01:24:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tzn1a5gz8h"
+        },
+        {
+          "Name": "label",
+          "Value": "images/default-avatar_1.jpg"
         },
         {
           "Name": "integrity",
@@ -2372,6 +3074,88 @@
       ]
     },
     {
+      "Route": "images/frontend-react_3.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react_3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:30:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w="
+        }
+      ]
+    },
+    {
+      "Route": "images/frontend-react_3.sx65cws5at.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react_3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:30:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sx65cws5at"
+        },
+        {
+          "Name": "label",
+          "Value": "images/frontend-react_3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YL52sAhd1aI6JvUvg8V7yL1+6vDnHNGG97V3ZkaQi8w="
+        }
+      ]
+    },
+    {
       "Route": "images/new1.e7wby9jcab.jpg",
       "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1.jpg",
       "Selectors": [],
@@ -2536,6 +3320,170 @@
       ]
     },
     {
+      "Route": "images/new1_2.e7wby9jcab.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28140"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 06:15:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e7wby9jcab"
+        },
+        {
+          "Name": "label",
+          "Value": "images/new1_2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts="
+        }
+      ]
+    },
+    {
+      "Route": "images/new1_2.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28140"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 06:15:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts="
+        }
+      ]
+    },
+    {
+      "Route": "images/new1_3.e7wby9jcab.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28140"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:29:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e7wby9jcab"
+        },
+        {
+          "Name": "label",
+          "Value": "images/new1_3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts="
+        }
+      ]
+    },
+    {
+      "Route": "images/new1_3.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28140"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:29:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ys3u+LY51K1OTruHKBK7Olsy4dhQUKEiCIXZTwj4Dts="
+        }
+      ]
+    },
+    {
       "Route": "images/thong-nhat-blade-xanh.5j82eaney6.jpg",
       "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh.jpg",
       "Selectors": [],
@@ -2604,6 +3552,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 26 Mar 2025 13:48:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sb3unp2wOh4lj0xEC4sRGHNBbud+u73crmdbE8oU5Ts="
+        }
+      ]
+    },
+    {
+      "Route": "images/thong-nhat-blade-xanh_1.5j82eaney6.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "466779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sb3unp2wOh4lj0xEC4sRGHNBbud+u73crmdbE8oU5Ts=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:30:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5j82eaney6"
+        },
+        {
+          "Name": "label",
+          "Value": "images/thong-nhat-blade-xanh_1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sb3unp2wOh4lj0xEC4sRGHNBbud+u73crmdbE8oU5Ts="
+        }
+      ]
+    },
+    {
+      "Route": "images/thong-nhat-blade-xanh_1.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh_1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "466779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sb3unp2wOh4lj0xEC4sRGHNBbud+u73crmdbE8oU5Ts=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 08:30:01 GMT"
         },
         {
           "Name": "Cache-Control",

@@ -27,6 +27,7 @@ builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFavoriteRepository, FavoriteRepository>();
+builder.Services.AddHttpClient();
 
 
 // Lấy Connection String từ appsettings.json

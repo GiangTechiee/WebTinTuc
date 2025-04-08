@@ -24,5 +24,10 @@ namespace WebTinTuc.Controllers
         {
             return View();
         }
+
+        public IActionResult Support()
+        {
+            return View();
+        }
     }
 }

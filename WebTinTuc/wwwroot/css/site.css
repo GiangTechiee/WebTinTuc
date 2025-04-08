@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -20,3 +20,29 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.footer {
+    background-color: #f8f9fa; /* Màu nền nhẹ nhàng từ Bootstrap */
+}
+
+    .footer h5 {
+        font-size: 1.1rem;
+    }
+
+    .footer .small {
+        font-size: 0.875rem; /* Kích thước chữ nhỏ hơn cho nội dung */
+    }
+
+    .footer a.text-muted:hover {
+        color: #0d6efd; /* Màu xanh mặc định của Bootstrap 5 khi hover */
+        text-decoration: underline;
+    }
+
+    .footer .fab {
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+        .footer .fab:hover {
+            color: #0d6efd; /* Hiệu ứng hover cho biểu tượng mạng xã hội */
+        }

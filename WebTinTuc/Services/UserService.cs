@@ -1,4 +1,6 @@
-﻿using WebTinTuc.Models.DTOs;
+﻿using System.Net.Http;
+using System.Text.Json;
+using WebTinTuc.Models.DTOs;
 using WebTinTuc.Models.Entities;
 using WebTinTuc.Repositories;
 
@@ -9,12 +11,32 @@ namespace WebTinTuc.Services
         private readonly IUserRepository _userRepository;
         private readonly IEmailService _emailService; // Service để gửi email
         private readonly IConfiguration _configuration;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public UserService(IUserRepository userRepository, IEmailService emailService, IConfiguration configuration)
+        public UserService(IUserRepository userRepository, IEmailService emailService, IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
             _userRepository = userRepository;
             _emailService = emailService;
             _configuration = configuration;
+            _httpClientFactory = httpClientFactory;
+        }
+
+        // Phương thức lấy URL ngrok động
+        private async Task<string> GetNgrokPublicUrl()
+        {
+            try
+            {
+                var httpClient = _httpClientFactory.CreateClient();
+                var response = await httpClient.GetStringAsync("http://localhost:4040/api/tunnels");
+                using var doc = JsonDocument.Parse(response);
+                var tunnels = doc.RootElement.GetProperty("tunnels");
+                var publicUrl = tunnels.EnumerateArray().First().GetProperty("public_url").GetString();
+                return publicUrl ?? _configuration["AppSettings:BaseUrl"]; // Fallback nếu không lấy được
+            }
+            catch
+            {
+                return _configuration["AppSettings:BaseUrl"]; // Dùng BaseUrl mặc định nếu lỗi
+            }
         }
 
         public async Task<User> Register(UserRegisterDto userDto)
@@ -41,7 +63,7 @@ namespace WebTinTuc.Services
                 {
                     var registeredUser = await _userRepository.Register(user);
 
-                    var baseUrl = _configuration["AppSettings:BaseUrl"];
+                    var baseUrl = await GetNgrokPublicUrl(); /*_configuration["AppSettings:BaseUrl"];*/
                     var confirmationLink = $"{baseUrl}/api/account/confirm-email?token={registeredUser.EmailConfirmationToken}";
                     await _emailService.SendEmailConfirmation(user.Email, user.FullName, confirmationLink);
 

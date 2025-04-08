@@ -41,9 +41,9 @@
 
     <!-- News Categories -->
     <div class="mt-4">
-        <h2 class="fw-bold">Latest Stories</h2>
-        <div class="row">
-            @foreach (var news in Model.Skip(1))
+        <h2 class="fw-bold">Tin mới nhất</h2>
+        <div class="row" id="news-container">
+            @foreach (var news in Model.Skip(1).Take(6))
             {
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card h-100">
@@ -69,7 +69,7 @@
 
     <!-- More Button -->
     <div class="text-center mt-4">
-        <a href="#" class="btn btn-dark">View More</a>
+        <button id="view-more-btn" class="btn btn-dark">Xem thêm</button>
     </div>
 
     <!-- Editor's Picks -->
@@ -91,3 +91,45 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts {
+    <script>
+        let skip = 7; // Bắt đầu từ tin thứ 7 (sau 1 tin hero + 6 tin ban đầu)
+        const pageSize = 6;
+
+        document.getElementById('view-more-btn').addEventListener('click', async () => {
+            const response = await fetch(`/News/GetLatestNews?skip=${skip}&take=${pageSize}`);
+            const newsItems = await response.json();
+
+            if (newsItems.length > 0) {
+                const container = document.getElementById('news-container');
+                newsItems.forEach(news => {
+                    const newsHtml = `
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <a href="/News/Details/${news.newId}" class="text-decoration-none">
+                                    <img src="${news.fullImagePath}" class="card-img-top" alt="News Image">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="/News/Details/${news.newId}" class="text-dark text-decoration-none">
+                                            ${news.title}
+                                        </a>
+                                    </h5>
+                                    <p class="text-muted">${news.abstract}</p>
+                                    <p class="card-text text-muted">
+                                        ${new Date(news.postedDate).toLocaleDateString('vi-VN')} · ${news.viewCount} lượt xem
+                                    </p>
+                                </div>
+                            </div>
+                        </div>`;
+                    container.insertAdjacentHTML('beforeend', newsHtml);
+                });
+                skip += pageSize;
+            } else {
+                document.getElementById('view-more-btn').disabled = true; // Tắt nút nếu không còn tin
+            }
+        });
+    </script>
+}
