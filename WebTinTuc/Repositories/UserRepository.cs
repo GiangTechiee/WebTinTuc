@@ -42,6 +42,15 @@ namespace WebTinTuc.Repositories
                 throw new Exception("Email hoặc số điện thoại không tồn tại");
             }
 
+            // Kiểm tra nếu token xác nhận email đã hết hạn
+            if (!user.IsEmailConfirmed && user.TokenExpiration.HasValue && user.TokenExpiration < DateTime.Now)
+            {
+                // Xóa tài khoản khỏi database
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+                throw new Exception("Email hoặc số điện thoại không tồn tại"); // Thông báo như không tồn tại
+            }
+
             // Kiểm tra nếu tài khoản bị khóa
             if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTime.Now)
             {
@@ -167,5 +176,6 @@ namespace WebTinTuc.Repositories
                 .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.UserId == userId);
         }
+
     }
 }

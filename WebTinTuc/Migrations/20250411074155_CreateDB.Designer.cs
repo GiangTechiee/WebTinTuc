@@ -12,8 +12,8 @@ using WebTinTuc.Data;
 namespace WebTinTuc.Migrations
 {
     [DbContext(typeof(WebTinTucContext))]
-    [Migration("20250329082209_CreateDb")]
-    partial class CreateDb
+    [Migration("20250411074155_CreateDB")]
+    partial class CreateDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

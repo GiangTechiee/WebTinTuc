@@ -13,88 +13,88 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg",
-      "PackagePath": "staticwebassets\\images\\55c7ef60-6586-42b8-8a64-977805778216_avatar.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
-      "PackagePath": "staticwebassets\\images\\avatar.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar_1.jpg",
-      "PackagePath": "staticwebassets\\images\\avatar_1.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev.jpg",
-      "PackagePath": "staticwebassets\\images\\backend-dev.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\backend-dev_1.jpg",
-      "PackagePath": "staticwebassets\\images\\backend-dev_1.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer.jpeg",
-      "PackagePath": "staticwebassets\\images\\data-engineer.jpeg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_1.jpeg",
-      "PackagePath": "staticwebassets\\images\\data-engineer_1.jpeg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_2.jpeg",
-      "PackagePath": "staticwebassets\\images\\data-engineer_2.jpeg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\data-engineer_3.jpeg",
-      "PackagePath": "staticwebassets\\images\\data-engineer_3.jpeg"
-    },
-    {
       "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar.jpg",
       "PackagePath": "staticwebassets\\images\\default-avatar.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar_1.jpg",
-      "PackagePath": "staticwebassets\\images\\default-avatar_1.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react.jpg",
-      "PackagePath": "staticwebassets\\images\\frontend-react.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react_1.jpg",
-      "PackagePath": "staticwebassets\\images\\frontend-react_1.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react_2.jpg",
-      "PackagePath": "staticwebassets\\images\\frontend-react_2.jpg"
-    },
-    {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\frontend-react_3.jpg",
-      "PackagePath": "staticwebassets\\images\\frontend-react_3.jpg"
     },
     {
       "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1.jpg",
       "PackagePath": "staticwebassets\\images\\new1.jpg"
     },
     {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_1.jpg",
-      "PackagePath": "staticwebassets\\images\\new1_1.jpg"
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new10.jpg",
+      "PackagePath": "staticwebassets\\images\\new10.jpg"
     },
     {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_2.jpg",
-      "PackagePath": "staticwebassets\\images\\new1_2.jpg"
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new11.jpeg",
+      "PackagePath": "staticwebassets\\images\\new11.jpeg"
     },
     {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new1_3.jpg",
-      "PackagePath": "staticwebassets\\images\\new1_3.jpg"
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new12.jpg",
+      "PackagePath": "staticwebassets\\images\\new12.jpg"
     },
     {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh.jpg",
-      "PackagePath": "staticwebassets\\images\\thong-nhat-blade-xanh.jpg"
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new13.jpg",
+      "PackagePath": "staticwebassets\\images\\new13.jpg"
     },
     {
-      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\thong-nhat-blade-xanh_1.jpg",
-      "PackagePath": "staticwebassets\\images\\thong-nhat-blade-xanh_1.jpg"
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new14.jpeg",
+      "PackagePath": "staticwebassets\\images\\new14.jpeg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new15.jpeg",
+      "PackagePath": "staticwebassets\\images\\new15.jpeg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new16.jpg",
+      "PackagePath": "staticwebassets\\images\\new16.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new17.jpg",
+      "PackagePath": "staticwebassets\\images\\new17.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new18.jpg",
+      "PackagePath": "staticwebassets\\images\\new18.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new19.jpg",
+      "PackagePath": "staticwebassets\\images\\new19.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new2.jpg",
+      "PackagePath": "staticwebassets\\images\\new2.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new20.jpg",
+      "PackagePath": "staticwebassets\\images\\new20.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new3.jpeg",
+      "PackagePath": "staticwebassets\\images\\new3.jpeg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new4.jpeg",
+      "PackagePath": "staticwebassets\\images\\new4.jpeg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new5.jpg",
+      "PackagePath": "staticwebassets\\images\\new5.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new6.jpg",
+      "PackagePath": "staticwebassets\\images\\new6.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new7.jpg",
+      "PackagePath": "staticwebassets\\images\\new7.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new8.jpg",
+      "PackagePath": "staticwebassets\\images\\new8.jpg"
+    },
+    {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\new9.jpg",
+      "PackagePath": "staticwebassets\\images\\new9.jpg"
     },
     {
       "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\js\\site.js",
