@@ -23,13 +23,6 @@
                         <input type="text" class="form-control" id="phoneNumber" placeholder="Nhập số điện thoại" required />
                         <div class="invalid-feedback">Số điện thoại phải là số Việt Nam.</div>
                     </div>
-
-                    <div class="mb-3">
-                        <label for="verifyKey" class="form-label">VerifyKey</label>
-                        <input type="text" class="form-control" id="verifyKey" placeholder="Nhập VerifyKey (10 ký tự, bắt đầu bằng số)" required />
-                        <div class="invalid-feedback">VerifyKey phải có đúng 10 ký tự và bắt đầu bằng số.</div>
-                    </div>
-
                     <div class="mb-3">
                         <label for="dateOfBirth" class="form-label">Ngày sinh(Tùy chọn)</label>
                         <input type="date" class="form-control" id="dateOfBirth" />
@@ -85,7 +78,6 @@
             const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;
             const phoneRegex = /^(?:\+84|0)(?:3[2-9]|5[6|8|9]|7[0|6-9]|8[1-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
             const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]*$/;
-            const verifyKeyRegex = /^\d.{9}$/;
 
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
@@ -97,7 +89,6 @@
                 const phoneNumber = document.getElementById('phoneNumber').value;
                 const dateOfBirth = document.getElementById('dateOfBirth').value || null;
                 const address = document.getElementById('address').value || null;
-                const verifyKey = document.getElementById('verifyKey').value;
 
                 let isValid = true;
 
@@ -134,13 +125,6 @@
                     document.getElementById('phoneNumber').classList.remove('is-invalid');
                 }
 
-                if (!verifyKeyRegex.test(verifyKey)) {
-                    document.getElementById('verifyKey').classList.add('is-invalid');
-                    isValid = false;
-                } else {
-                    document.getElementById('verifyKey').classList.remove('is-invalid');
-                }
-
                 const today = new Date();
                 const dob = new Date(dateOfBirth);
                 if (dateOfBirth && dob >= today) {
@@ -165,7 +149,7 @@
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ fullName, email, password, phoneNumber, verifyKey, dateOfBirth, address })
+                        body: JSON.stringify({ fullName, email, password, phoneNumber, dateOfBirth, address })
                     });
 
                     // Ẩn spinner sau khi nhận phản hồi

@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\BTL_WebNC\\WebTinTuc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\account\\printuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\account\\printuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\models\\dtos\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\account\\printuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|solutionrelative:webtintuc\\views\\account\\printuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D0E91B8-6FD6-48D4-8042-3A5F92B3590F}|WebTinTuc\\WebTinTuc.csproj|d:\\btl_webnc\\webtintuc\\webtintuc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -67,20 +67,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "PrintUser.cshtml",
               "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\PrintUser.cshtml",
               "RelativeDocumentMoniker": "WebTinTuc\\Views\\Account\\PrintUser.cshtml",
               "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\PrintUser.cshtml",
               "RelativeToolTip": "WebTinTuc\\Views\\Account\\PrintUser.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-14T06:42:36.131Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "WebTinTuc\\Views\\Account\\Register.cshtml",
@@ -93,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "WebTinTuc\\Services\\UserService.cs",
@@ -106,20 +106,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "WebTinTuc\\Repositories\\UserRepository.cs",
               "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "WebTinTuc\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-13T13:37:28.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UserRegisterDto.cs",
               "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\DTOs\\UserRegisterDto.cs",
               "RelativeDocumentMoniker": "WebTinTuc\\Models\\DTOs\\UserRegisterDto.cs",
@@ -132,13 +132,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\User.cs",
               "RelativeDocumentMoniker": "WebTinTuc\\Models\\Entities\\User.cs",
               "ToolTip": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\Models\\Entities\\User.cs",
               "RelativeToolTip": "WebTinTuc\\Models\\Entities\\User.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAowEIAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwC4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-13T11:28:25.449Z",
               "EditorCaption": ""

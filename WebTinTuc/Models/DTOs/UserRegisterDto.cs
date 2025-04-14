@@ -25,11 +25,6 @@ namespace WebTinTuc.Models.DTOs
         [EmailAddress(ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "VerifyKey là bắt buộc")]
-        [StringLength(10, MinimumLength = 10, ErrorMessage = "VerifyKey phải có đúng 10 ký tự")]
-        [RegularExpression(@"^\d.*$", ErrorMessage = "VerifyKey phải bắt đầu bằng chữ số")]
-        public string VerifyKey { get; set; }
-
         public DateTime? DateOfBirth { get; set; }
         public string? Address { get; set; }
         public int RoleId { get; set; }

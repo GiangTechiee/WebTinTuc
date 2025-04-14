@@ -236,11 +236,6 @@ namespace WebTinTuc.Migrations
                     b.Property<DateTime?>("TokenExpiration")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("VerifyKey")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
                     b.HasKey("UserId");
 
                     b.HasIndex("Fk_RoleId");

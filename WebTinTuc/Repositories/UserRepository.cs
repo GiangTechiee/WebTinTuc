@@ -26,8 +26,6 @@ namespace WebTinTuc.Repositories
             // Hash password trước khi lưu
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
 
-            
-
             user.CreatedAt = DateTime.Now;
 
             _context.Users.Add(user);

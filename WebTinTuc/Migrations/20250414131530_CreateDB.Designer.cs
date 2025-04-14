@@ -12,7 +12,7 @@ using WebTinTuc.Data;
 namespace WebTinTuc.Migrations
 {
     [DbContext(typeof(WebTinTucContext))]
-    [Migration("20250413125059_CreateDB")]
+    [Migration("20250414131530_CreateDB")]
     partial class CreateDB
     {
         /// <inheritdoc />
