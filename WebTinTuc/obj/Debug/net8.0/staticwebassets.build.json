@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q2wWvSPO7ROjtoI+ERZdyDC18vJXre1kii8F5Tjb6Hw=",
+  "Hash": "e4CJvm3REVvQ3WQ/Ka3ECQmZVxxT6UucxxDl3ofsIvA=",
   "Source": "WebTinTuc",
   "BasePath": "_content/WebTinTuc",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
+      "SourceId": "WebTinTuc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\",
+      "BasePath": "_content/WebTinTuc",
+      "RelativePath": "images/avatar#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4zsucm4wzk",
+      "Integrity": "0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\avatar.jpg"
     },
     {
       "Identity": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar.jpg",
@@ -1922,6 +1943,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/avatar.4zsucm4wzk.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 13:02:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4zsucm4wzk"
+        },
+        {
+          "Name": "label",
+          "Value": "images/avatar.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
+        }
+      ]
+    },
+    {
+      "Route": "images/avatar.jpg",
+      "AssetFile": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 13:02:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0C1luwgrjqD2ht57LuS6wy2JgO9ElXtYTfAlj7yoxw8="
         }
       ]
     },

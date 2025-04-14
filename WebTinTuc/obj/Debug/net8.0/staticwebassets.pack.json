@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\avatar.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar.jpg"
+    },
+    {
       "Id": "D:\\BTL_WebNC\\WebTinTuc\\WebTinTuc\\wwwroot\\images\\default-avatar.jpg",
       "PackagePath": "staticwebassets\\images\\default-avatar.jpg"
     },

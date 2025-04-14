@@ -41,6 +41,13 @@ namespace WebTinTuc.Models.Entities
         public string PasswordHash { get; set; }
 
 
+        [Required(ErrorMessage = "VerifyKey là bắt buộc")]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "VerifyKey phải có đúng 10 ký tự")]
+        [RegularExpression(@"^\d.*$", ErrorMessage = "VerifyKey phải bắt đầu bằng chữ số")]
+        public string VerifyKey { get; set; }
+
+
+
         [ForeignKey("Role")]
         public int Fk_RoleId { get; set; }
 

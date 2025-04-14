@@ -21,6 +21,11 @@ namespace WebTinTuc.Models.DTOs
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$",
             ErrorMessage = "Mật khẩu phải có chữ hoa, chữ thường, số và ký tự đặc biệt")]
         public string? Password { get; set; }
+
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "VerifyKey phải có đúng 10 ký tự")]
+        [RegularExpression(@"^\d.*$", ErrorMessage = "VerifyKey phải bắt đầu bằng chữ số")]
+        public string? VerifyKey { get; set; }
+
         public string? Avatar { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string? Address { get; set; }

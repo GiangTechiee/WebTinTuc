@@ -47,6 +47,7 @@ namespace WebTinTuc.Services
                 PasswordHash = userDto.Password,
                 PhoneNumber = userDto.PhoneNumber,
                 Email = userDto.Email,
+                VerifyKey = userDto.VerifyKey,
                 DateOfBirth = userDto.DateOfBirth,
                 Fk_RoleId = 2,
                 CreatedAt = DateTime.Now,
@@ -147,6 +148,7 @@ namespace WebTinTuc.Services
             user.FullName = userDto.FullName ?? user.FullName;
             user.PhoneNumber = userDto.PhoneNumber ?? user.PhoneNumber;
             user.Email = userDto.Email ?? user.Email;
+            
             user.DateOfBirth = userDto.DateOfBirth ?? user.DateOfBirth;
             user.Address = userDto.Address ?? user.Address;
             user.Fk_RoleId = userDto.RoleId ?? user.Fk_RoleId;

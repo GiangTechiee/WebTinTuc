@@ -52,6 +52,7 @@ namespace WebTinTuc.Controllers
                     Email = user.Email,
                     PhoneNumber = user.PhoneNumber,
                     FullName = user.FullName,
+                    VerifyKey = user.VerifyKey,
                     Avatar = user.Avatar,
                     Address = user.Address,
                     Message = "Đăng ký thành công! Vui lòng kiểm tra email."
@@ -157,6 +158,7 @@ namespace WebTinTuc.Controllers
             ViewBag.Role = user.Role?.RoleName ?? "User";
             ViewBag.Avatar = user.FullAvatarPath;
             ViewBag.Email = user.Email;
+            ViewBag.VerifyKey = user.VerifyKey;
             ViewBag.PhoneNumber = user.PhoneNumber;
             ViewBag.DateOfBirth = user.DateOfBirth.HasValue
                 ? user.DateOfBirth.Value.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture)
@@ -213,6 +215,15 @@ namespace WebTinTuc.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+        }
+
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("PrintUser")]
+        public async Task<IActionResult> PrintUser()
+        {
+            var users = await _userService.GetAllUsersAsync();
+            return View(users);
         }
 
     }
