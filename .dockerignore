@@ -1,0 +1,11 @@
+bin/
+obj/
+appsettings.json
+appsettings.Development.json
+.env
+*.log
+logs/
+.vscode/
+.idea/
+*.vs/
+Dockerfile.dev

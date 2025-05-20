@@ -54,7 +54,7 @@ namespace WebTinTuc.Services
                 Avatar = "default-avatar.jpg",
                 IsEmailConfirmed = false,
                 EmailConfirmationToken = Guid.NewGuid().ToString(), // Tạo token ngẫu nhiên
-                TokenExpiration = DateTime.Now.AddMinutes(15) // Token hết hạn sau 24 giờ
+                TokenExpiration = DateTime.UtcNow.AddHours(24) // Token hết hạn sau 24 giờ
             };
 
             using (var transaction = await _userRepository.BeginTransactionAsync())
@@ -99,7 +99,7 @@ namespace WebTinTuc.Services
                 throw new Exception("Token không hợp lệ.");
             }
 
-            if (user.TokenExpiration < DateTime.Now)
+            if (user.TokenExpiration < DateTime.UtcNow)
             {
                 throw new Exception("Token đã hết hạn.");
             }

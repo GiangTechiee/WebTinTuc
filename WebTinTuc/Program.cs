@@ -35,7 +35,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 // Cấu hình DbContext 
 builder.Services.AddDbContext<WebTinTucContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseNpgsql(connectionString));
 
 
 builder.Services.AddSession(options =>

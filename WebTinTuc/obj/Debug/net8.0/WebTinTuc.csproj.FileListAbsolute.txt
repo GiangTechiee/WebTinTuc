@@ -176,3 +176,5 @@ D:\BTL_WebNC\WebTinTuc\WebTinTuc\obj\Debug\net8.0\WebTinTuc.pdb
 D:\BTL_WebNC\WebTinTuc\WebTinTuc\obj\Debug\net8.0\WebTinTuc.genruntimeconfig.cache
 D:\BTL_WebNC\WebTinTuc\WebTinTuc\obj\Debug\net8.0\ref\WebTinTuc.dll
 D:\BTL_WebNC\WebTinTuc\WebTinTuc\obj\Debug\net8.0\WebTinTuc.sourcelink.json
+D:\BTL_WebNC\WebTinTuc\WebTinTuc\bin\Debug\net8.0\Npgsql.dll
+D:\BTL_WebNC\WebTinTuc\WebTinTuc\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
